@@ -2,4 +2,4 @@
 
 
 
-Sistema de gestion de presupuesto de viajes
+Sistema de gestion de presupuesto de Computadoras
