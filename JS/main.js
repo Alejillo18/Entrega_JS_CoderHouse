@@ -1,9 +1,9 @@
 //IIFE:
 
 (()=>{
-//Definimos los componenetes con los cuales podemos armar la pc:
+//Definimos los componentes con los cuales podemos armar la PC:
 
-//Placas madres:
+//Placas madre:
 
 let motherBoardsAMD = [["ASUS Prime B450M-A II", "B450", 70000, ["Ryzen 5", "Ryzen 7"], 4], ["MSI B550M PRO-VDH WIFI", "B550", 95000, ["Ryzen 5", "Ryzen 7"], 4], ["ASUS TUF Gaming X570-Plus", "X570", 130000, ["Ryzen 5", "Ryzen 7"], 4]
 ];
@@ -38,26 +38,25 @@ let cases = [["Mid Tower con RGB", "ATX/MicroATX", 40000, ["ATX", "MicroATX"]],[
 
 //Funciones:
 
-//Funcion implementada para mostrar todos los componentes con los que cuenta el simulador de un tipo en especifico. mostrando nombre y precio de dicho componente:
+//Función implementada para mostrar todos los componentes con los que cuenta el simulador de un tipo específico, mostrando nombre y precio de dicho componente:
 
-
-function mostrarComponenetesPyN (tipo){
+function mostrarComponentesPyN (tipo){
     //Mostramos cada componente, su nombre y precio:
     for (const componente of tipo){
         console.log(`Nombre = ${componente[0]}\n precio = ${componente[2]}$ ARS`)
     }
 }
 
-//Funcion para iterar los componentes de un tipo espeficico y mostrar todos los datos de los mismos:
+//Función para iterar los componentes de un tipo específico y mostrar todos los datos de los mismos:
 
-function mostrarComponenteDetallados(tipo){
+function mostrarComponentesDetallados(tipo){
 for(const componente of tipo){
-  console.log(`\nNombre del componente = ${componente[0]}\n caracteristica: ${componente[1]}\n precio : ${componente[2]}\n compatibilidades ${componente[3]}\n`)
+  console.log(`\nNombre del componente = ${componente[0]}\n característica: ${componente[1]}\n precio: ${componente[2]}\n compatibilidades: ${componente[3]}\n`)
 }
 }
 
 
-//Funcion para armar la pc:
+//Función para armar la PC:
 
 function armarPC(){
   let pc = [];
@@ -65,7 +64,7 @@ function armarPC(){
   pc.push(elegirProcesador(pc));
   pc.push(elegirRams(pc));
   pc.push(elegirDisco());
-  let gpu = confirm("Desea elegir una Tarjeta grafica?");
+  let gpu = confirm("¿Desea elegir una tarjeta gráfica?");
   if (gpu){
     pc.push(elegirGpu());
   }
@@ -74,93 +73,215 @@ function armarPC(){
   }
   pc.push(elegirFuente(pc));
   pc.push(elegirGabinete());
-  console.log(typeof(pc));
+  return pc;
 }
 
-//Funcion para elegir placa madre:
+//Función para elegir placa madre:
 function elegirPlacaMadre(){
-  let placaMadreSeleccionada ;
-    console.log("Las placas madres displonibles son: ");
-    console.log("Las placas madres compatibles con AMD ");
-    mostrarComponenteDetallados(motherBoardsAMD)
-    console.log("Las placas madres compatibles con Intel ");
-    mostrarComponenteDetallados(motherBoardsIntel)
+  let placaMadreSeleccionada = 1 ;
+    console.log("Las placas madre disponibles son: ");
+    console.log("Placas madre compatibles con AMD: ");
+    mostrarComponentesDetallados(motherBoardsAMD)
+    console.log("Placas madre compatibles con Intel: ");
+    mostrarComponentesDetallados(motherBoardsIntel)
+    let opcionValida = false;
     do{
-      const amd = confirm("Desea una placa compatible con AMD?")
+      const amd = confirm("¿Desea una placa compatible con AMD?")
       if (amd){
-        placaMadreSeleccionada = prompt("Desea la placa número uno, la dos o las tres?\n1:ASUS Prime B450M-A II\n2:MSI B550M PRO-VDH WIFI\n3:ASUS TUF Gaming X570-Plus")
-        return (motherBoardsAMD[parseInt(placaMadreSeleccionada)-1])
+        do{
+          placaMadreSeleccionada = parseInt(prompt("¿Desea la placa número uno, dos o tres?\n1: ASUS Prime B450M-A II\n2: MSI B550M PRO-VDH WIFI\n3: ASUS TUF Gaming X570-Plus"));
+          if (placaMadreSeleccionada === null || placaMadreSeleccionada === 0){
+            alert("Ingrese una opción válida");
+            continue;
+          }
+          else if (placaMadreSeleccionada >= 1 && placaMadreSeleccionada <= 3 ){
+              return (motherBoardsAMD[parseInt(placaMadreSeleccionada)-1]);
+              opcionValida = true;
+          }
+          else{
+            alert("Opción inválida!");
+            continue
+          }
+        }
+        while(!opcionValida); 
       }
       else{
-        placaMadreSeleccionada = prompt("Desea la placa Intel número uno, la dos o las tres?\n1:ASRock B660M-HDV\n2:Gigabyte B660M DS3H DDR4\n3:MSI Z690-A PRO DDR4")
-        return (motherBoardsIntel[parseInt(placaMadreSeleccionada)-1])
+        do{
+          placaMadreSeleccionada = parseInt(prompt("¿Desea la placa número uno, dos o tres?\n1: ASRock B660M-HDV\n2: Gigabyte B660M DS3H DDR4\n3: MSI Z690-A PRO DDR4"));
+          if (placaMadreSeleccionada === null || placaMadreSeleccionada === 0){
+            alert("Ingrese una opción válida");
+            continue;
+          }
+          else if (placaMadreSeleccionada >= 1 && placaMadreSeleccionada <= 3 ){
+              return (motherBoardsIntel[parseInt(placaMadreSeleccionada)-1]);
+              opcionValida = true;
+          }
+          else{
+            alert("Opción inválida!");
+            continue
+          }
+        }
+        while(!opcionValida);
       }
     }
     while(!!!placaMadreSeleccionada)
 }
 
-
-
-//Funcion para elegir Procesador:
+//Función para elegir Procesador:
 function elegirProcesador(pc){
-  let placaMadre= pc[0]
-  let chipset = placaMadre[1]
-  console.log("Procesadores compatibles con la placa madre seleccionada: ")
+  let placaMadre= pc[0];
+  let chipset = placaMadre[1];
+  console.log("Procesadores compatibles con la placa madre seleccionada: ");
   const compatibles = cpus.filter(cpu => cpu[3].includes(chipset));
   for (const cpu of compatibles){
-    console.log(`\nNombre del componente = ${cpu[0]}\n caracteristica: ${cpu[1]}\n precio : ${cpu[2]}\n compatibilidades ${cpu[3]}\n`)
+    console.log(`\nNombre del componente = ${cpu[0]}\n característica: ${cpu[1]}\n precio: ${cpu[2]}\n compatibilidades: ${cpu[3]}\n`);
   }
-  let cpuElegido =parseInt(prompt("Desea elegir el cpu uno , o el cpu 2? :"))
-  return compatibles[cpuElegido -1 ]
+  let opcionValida = false;
+  do{
+      cpuElegido = parseInt(prompt(`Elija el CPU que desea:\n1: ${compatibles[0][0]}\n2: ${compatibles[1][0]}`));
+          if (cpuElegido === null || cpuElegido === 0){
+            alert("Ingrese una opción válida");
+            continue;
+          }
+          else if (cpuElegido >= 1 && cpuElegido <= 2 ){
+              return (compatibles[parseInt(cpuElegido)-1]);
+              opcionValida = true;
+          }
+          else{
+            alert("Opción inválida!");
+            continue
+          }
+        }
+        while(!opcionValida);
 }
 
-
-
-//Funcion para elegir las memorias ram:
+//Función para elegir las memorias RAM:
 
 function elegirRams (pc) {
   let placaMadre = pc[0];
-  let cantidadRams;
+  let cantidadRams = "";
   let arrayRam = [];
-  if (placaMadre[1] === "ASRock B660M-HDV"){
-    cantidadRams = prompt ("Desea comprar 1 ram o 2 memorias?"); 
+  if (placaMadre[0] === "ASRock B660M-HDV"){
+    let cantidadRamsValida = false ;
+    do{ 
+      cantidadRams = parseInt(prompt ("¿Desea comprar 1 o 2 memorias?"));
+      if (cantidadRams === 1 || cantidadRams === 2){ 
+        mostrarComponentesDetallados(rams);
+        for (let i = 1; i <= cantidadRams; i++){  
+          let opcionValida = false;
+          do{
+            let ram = parseInt(prompt(`Seleccione la memoria RAM:\n1: ${rams[0][0]}\n2: ${rams[1][0]}\n3: ${rams[2][0]}\n4: ${rams[3][0]}`));
+            if (ram === null || ram === 0){
+            alert("Ingrese una opción válida");
+            continue;
+            }
+            else if (ram >= 1 && ram <= 4 ){
+              arrayRam.push(rams[ram - 1])
+              opcionValida = true;
+            }
+            else{
+              alert("Opción inválida!");
+              continue
+            }
+          }
+          while(!opcionValida);
+          }
+          cantidadRamsValida = true;
+      }
+      else{
+        console.log(cantidadRams)
+        alert("Ingrese una opción válida!");
+        continue
+        }
+      }
+    while(!cantidadRamsValida);
+    return arrayRam;
   }
   else{
-   cantidadRams = prompt ("Desea comprar 1 ram , 2 o 4?"); 
-  }
-  console.log("Por mejor funcionamiento, se recomienda comprar (en caso de que no sea 1) las memorias iguales, ya sean 2 ó 4");
-    mostrarComponenteDetallados(rams);
-  for (let i = 1; i <= cantidadRams; i++){
-   let ram = parseInt(prompt("Desea la ram numero 1,2,3 o 4?"));
-   arrayRam.push(rams[ram - 1]);
-  }
-  return arrayRam;
+    let cantidadRamsValida = false ;
+    do{ 
+      cantidadRams = parseInt(prompt ("¿Desea comprar 1 , 2 ó 4 memorias?")); 
+      if (cantidadRams === 1 || cantidadRams === 2 || cantidadRams === 4){
+        mostrarComponentesDetallados(rams);
+        for (let i = 1; i <= cantidadRams; i++){
+            let opcionValida = false;
+          do{
+          let ram = parseInt(prompt(`Seleccione la memoria RAM:\n1: ${rams[0][0]}\n2: ${rams[1][0]}\n3: ${rams[2][0]}\n4: ${rams[3][0]}`));
+          if (ram === null || ram === 0){
+            alert("Ingrese una opción válida");
+            continue;
+          }
+          else if (ram >= 1 && ram <= 4 ){
+              arrayRam.push(rams[ram - 1])
+              opcionValida = true;
+          }
+          else{
+            alert("Opción inválida!");
+            continue
+          }
+        }
+        while(!opcionValida);
+        }
+      cantidadRamsValida = true;
+      return arrayRam;
+      }
+      else{
+        alert("Ingrese una opción válida!")
+        }
+      }
+      while(!cantidadRamsValida);
+}
 }
 
-
-//Funcion para elegir disco duro:
+//Función para elegir disco duro:
 function elegirDisco(){
-  mostrarComponenteDetallados(storages);
-  let disco = parseInt(prompt("Que disco duro desea? 1, 2 ó 3?"))
-  return storages[disco - 1];
+  let opcionValida = false;
+  do{
+          disco = parseInt(prompt(`¿Qué disco duro desea?:\n1: ${storages[0][0]}\n2: ${storages[1][0]}\n3: ${storages[2][0]}`));
+          if (disco === null || disco === 0){
+            alert("Ingrese una opción válida");
+            continue;
+          }
+          else if (disco >= 1 && disco <= 3 ){
+              return (storages[parseInt(disco)-1]);
+              opcionValida = true;
+          }
+          else{
+            alert("Opción inválida!");
+            continue
+          }
+        }
+        while(!opcionValida);
 }
 
-//Funcion para elegir gpu:
-
+//Función para elegir GPU:
 function elegirGpu(){
-  mostrarComponenteDetallados(gpus);
-  console.log("Verificar pcie, ya que si es menor el de la placa madre, la grafica va a funcionar pero a menor rendimiento!")
-  let gpu = parseInt(prompt("Que tarjeta gráfica desea? la numero 1, 2 , 3 o 4?"))
-  return gpus[gpu - 1]
+  let opcionValida = false;
+  mostrarComponentesDetallados(gpus);
+  alert("Verifique PCIe: si la versión de la placa madre es menor, la gráfica funcionará con rendimiento reducido.");
+  do{
+          let gpu  = parseInt(prompt(`¿Qué tarjeta gráfica desea?:\n1: ${gpus[0][0]}\n2: ${gpus[1][0]}\n3: ${gpus[2][0]}\n4: ${gpus[3][0]}`));
+          if (gpu === null || gpu === 0){
+            alert("Ingrese una opción válida");
+            continue;
+          }
+          else if (gpu >= 1 && gpu <= 4 ){
+              return (gpus[(gpu)-1]);
+              opcionValida = true;
+          }
+          else{
+            alert("Opción inválida!");
+            continue
+          }
+        }
+        while(!opcionValida);
 }
 
-
-//Funcion para elegir la fuente para la pc:
-
+//Función para elegir la fuente para la PC:
 function elegirFuente(pc){
+  let opcionValida = false;
   let grafica = pc[4];
-  mostrarComponenteDetallados(psus);
-
+  mostrarComponentesDetallados(psus);
   if (grafica && Array.isArray(grafica)) {
     let nombre = grafica[0].toLowerCase();
     const gpusQueRequieren650W = ["rtx 4070", "rx 6700 xt", "rx 7600"];
@@ -172,70 +293,135 @@ function elegirFuente(pc){
     }
 
   } else {
-    alert("No seleccionaste una GPU dedicada. Cualquier fuente sirve.");
+    alert("No seleccionó una GPU dedicada. Cualquier fuente es compatible.");
   }
-
-  let fuente = parseInt(prompt("¿Qué fuente desea? (1 o 2)"));
-  return psus[fuente - 1];
+  do{
+          fuente = parseInt(prompt(`¿Qué fuente desea?:\n1: ${psus[0][0]}\n2: ${psus[1][0]}`));
+          if (fuente === null || fuente === 0){
+            alert("Ingrese una opción válida");
+            continue;
+          }
+          else if (fuente >= 1 && fuente <= 2 ){
+              return (psus[(fuente)-1]);
+              opcionValida = true;
+          }
+          else{
+            alert("Opción inválida!");
+            continue
+          }
+        }
+        while(!opcionValida);
 }
 
-//Funcion para elegir el gabinete: 
+//Función para elegir el gabinete: 
 function elegirGabinete(){
-  mostrarComponenteDetallados(cases);
-  let gabinete = parseInt(prompt("que gabinete desea para la pc? el gabinete 1 o el gabinete 2?"));
-return cases[gabinete - 1];
+  let opcionValida = false;
+  mostrarComponentesDetallados(cases);
+   do{
+          let gabinete = parseInt(prompt(`¿Qué gabinete desea para la computadora?:\n1: ${cases[0][0]}\n2: ${cases[1][0]} `));
+          if (gabinete === null || gabinete === 0){
+            alert("Ingrese una opción válida");
+            continue;
+          }
+          else if (gabinete >= 1 && gabinete <= 2 ){
+              return (cases[(gabinete)-1]);
+              opcionValida = true;
+          }
+          else{
+            alert("Opción inválida!");
+            continue
+          }
+        }
+        while(!opcionValida);
 }
 
 
-//Funcion para calcular el presupuesto final de la pc, mostrando sus componentes:
-function presupuesto (pc){
+//Función para calcular el presupuesto final de la PC, mostrando sus componentes:
+function presupuesto(pc){
 let componentes = [];
+let total = [];
 for (const comp of pc){
-  componentes.push(comp[0]);
+  if(comp === null){continue}
+  if(Array.isArray(comp) && Array.isArray(comp[0])){
+    for (const sub of comp){
+      componentes.push(sub[0]);
+      total.push(sub[2]);
+    }
+  }
+  else if (Array.isArray(comp)){
+    componentes.push(comp[0]);
+    total.push(comp[2]);
+  }
+  else{
+    alert(`Componente no esperado: ${comp}`)
+  }
 }
-  let confirmacion = confirm(`Su pc contiene los siguientes componentes: ${componentes[0]}\n${componentes[1]}\n${componentes[2]}\n)${componentes[3]}\n${componentes[4]}\n}${componentes[5]}\n`);
+for (const pres of componentes){
+    console.log("-" + pres);
+  }
+  calcularTotal(total);
 }
 
+//Función para calcular el total con el array de los precios de los componentes:
+function calcularTotal(array){
+  let total = 0;
+  for(const comp of array){
+    console.log(`Precio del componente: ${comp}$ ARS`)
+    total += parseFloat(comp);
+  }
+  alert("El total de la computadora tiene un 10% agregado por el armado")
+  total *= 1.10 //armado de la PC es un 10% del total
+  alert(`El total de la computadora es: ${total.toFixed(2)}$ ARS`)
+}
 
 //Menú de opciones:
-
 let opcion = "";
 
 do {
-  opcion =  prompt("bienvenido al simulador:\nTipee para elegir que desea realizar:\n1: Para mostrar todos los componetes disponibles y su precio.\n2: Para ver las computadoras prefabricadas.\n3: Para armar su propia computadora\nsalir: Sale del programa.");
+  opcion =  prompt("Bienvenido al simulador:\nSeleccione qué desea realizar:\n1: Mostrar todos los componentes disponibles y su precio\n2: Ver computadoras prefabricadas\n3: Armar su propia computadora\nsalir: Salir del programa");
 
   if (opcion === "1"){
-
-    console.log("Mother Boards Compatibles con AMD: ")
-    mostrarComponenetesPyN(motherBoardsAMD);
-    console.log("Mother Boards Compatibles con Intel: ")
-    mostrarComponenetesPyN(motherBoardsIntel);
+    console.log("Placas madre compatibles con AMD: ")
+    mostrarComponentesPyN(motherBoardsAMD);
+    console.log("Placas madre compatibles con Intel: ")
+    mostrarComponentesPyN(motherBoardsIntel);
     console.log("Procesadores: ");
-    mostrarComponenetesPyN(cpus);
+    mostrarComponentesPyN(cpus);
     console.log("Tarjetas gráficas: ");
-    mostrarComponenetesPyN(gpus);
+    mostrarComponentesPyN(gpus);
     console.log("Memorias RAM: ");
-    mostrarComponenetesPyN(rams);
-    console.log("Discos Duros: ");
-    mostrarComponenetesPyN(storages);
-    console.log("Fuentes de alimentacion: ");
-    mostrarComponenetesPyN(psus);
-    console.log("gabinetes: ");
-    mostrarComponenetesPyN(cases);
+    mostrarComponentesPyN(rams);
+    console.log("Discos duros: ");
+    mostrarComponentesPyN(storages);
+    console.log("Fuentes de alimentación: ");
+    mostrarComponentesPyN(psus);
+    console.log("Gabinetes: ");
+    mostrarComponentesPyN(cases);
   }
   else if (opcion === "2"){
-
+    //Mostramos 2 opciones de PC ya armadas: y dejamos al usuario elegir
+    let pre = ""
+    do{
+      pre = parseInt(prompt("Tenemos dos opciones de PC ya armadas\nElija la que desee:\n1: AMD básica\n2: INTEL básica"))
+      if (pre === 1){
+        const amdBasica = [motherBoardsAMD[0], cpus[0], [rams[0], rams[0] ], storages[0], gpus[0], psus[0], cases[0]];
+        presupuesto(amdBasica);
+      }
+      else if  (pre === 2){
+        const intBasica =   [motherBoardsIntel[0], cpus[2], [rams[0], rams[0] ], storages[0], gpus[0], psus[0],cases[0]];
+        presupuesto(intBasica);
+      }
+      else{
+        alert("Opción incorrecta!")
+      }
+    }
+    while (!!!pre)
   }
-
   else if (opcion === "3"){
-
     const pc = armarPC();
     presupuesto(pc);
-    
   }
   
-
-} while(opcion === "salir");
-
+} while(opcion !== "salir");
 
 })();
