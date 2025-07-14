@@ -139,58 +139,115 @@
   ]);
 
 //Funciones para agregar componentes:
-function agregarComponente(nombre,caracteristica,precio,arrayCompatibilidad,slotRam,tipo){
-  const nuevoComponente = [];
-  switch (tipo){
-    case motherBoardAMD:
-      nuevoComponente = new PlacaMadre(nombre,caracteristica,precio,arrayCompatibilidad,slotRam);
+function agregarComponente(tipo, nombre, caracteristica, precio, arrayCompatibilidad, slotRam) {
+  let nuevoComponente;
+  const componenteBase = { tipo, nombre, caracteristica, precio, arrayCompatibilidad, slotRam };
+
+  switch (tipo) {
+    case "Placa Madre AMD":
+      nuevoComponente = new PlacaMadre(nombre, caracteristica, precio, arrayCompatibilidad, slotRam);
       motherBoardsAMD.push(nuevoComponente);
-      break
-    case motherBoardIntel:
-      nuevoComponente = new PlacaMadre(nombre,caracteristica,precio,arrayCompatibilidad,slotRam);
+      break;
+    case "Placa Madre Intel":
+      nuevoComponente = new PlacaMadre(nombre, caracteristica, precio, arrayCompatibilidad, slotRam);
       motherBoardsIntel.push(nuevoComponente);
-      break
-    case cpu:
-      nuevoComponente = new Componente(nombre,caracteristica,precio,arrayCompatibilidad);
+      break;
+    case "CPU":
+      nuevoComponente = new Componente(nombre, caracteristica, precio, arrayCompatibilidad);
       cpus.push(nuevoComponente);
-      break
-    case gpu:
-      nuevoComponente = new Componente(nombre,caracteristica,precio,arrayCompatibilidad);
+      break;
+    case "GPU":
+      nuevoComponente = new Componente(nombre, caracteristica, precio, arrayCompatibilidad);
       gpus.push(nuevoComponente);
-      break
-    case ram:
-      nuevoComponente = new Componente(nombre,caracteristica,precio,arrayCompatibilidad);
+      break;
+    case "RAM":
+      nuevoComponente = new Componente(nombre, caracteristica, precio, arrayCompatibilidad);
       rams.push(nuevoComponente);
-      break
-    case discoDuro:
-      nuevoComponente = new Componente(nombre,caracteristica,precio,arrayCompatibilidad);
+      break;
+    case "Disco Duro":
+      nuevoComponente = new Componente(nombre, caracteristica, precio, arrayCompatibilidad);
       storages.push(nuevoComponente);
-      break
-    case fuente:
-      nuevoComponente = new Componente(nombre,caracteristica,precio,arrayCompatibilidad);
+      break;
+    case "Fuente":
+      nuevoComponente = new Componente(nombre, caracteristica, precio, arrayCompatibilidad);
       psus.push(nuevoComponente);
-      break
-    case gabinete:
-      nuevoComponente = new Componente(nombre,caracteristica,precio,arrayCompatibilidad);
+      break;
+    case "Gabinete":
+      nuevoComponente = new Componente(nombre, caracteristica, precio, arrayCompatibilidad);
       cases.push(nuevoComponente);
-      break
+      break;
   }
+
+  const guardados = JSON.parse(localStorage.getItem("componentesAgregados")) || [];
+  guardados.push(componenteBase);
+  localStorage.setItem("componentesAgregados", JSON.stringify(guardados));
 }
 
-  const form = document.getElementById('form-nuevo-componente');
-  if (form){form.addEventListener('submit', e => {
-    e.preventDefault();
-    const tipo = form.tipo.value;
-    const nombre = form.nombre.value.trim();
-    const caracteristica = form.caracteristica.value.trim();
-    const precio = parseFloat(form.precio.value);
-    const compat = form.compatibilidad.value.split(',').map(s => s.trim()).filter(s => s);
-    const slots = tipo.startsWith('Placa Madre') ? parseInt(form.slotsRam.value, 10) : undefined;
-    agregarComponente(tipo, nombre, caracteristica, precio, compat, slots);
-    form.reset();
-  });}
-  
+function cargarComponentesLocales() {
+  const guardados = JSON.parse(localStorage.getItem('componentesAgregados')) || [];
+  for (const comp of guardados) {
+    let nuevo;
+    switch (comp.tipo) {
+      case "Placa Madre AMD":
+        nuevo = new PlacaMadre(comp.nombre, comp.caracteristica, comp.precio, comp.arrayCompatibilidad, comp.slotRam);
+        motherBoardsAMD.push(nuevo);
+        break;
+      case "Placa Madre Intel":
+        nuevo = new PlacaMadre(comp.nombre, comp.caracteristica, comp.precio, comp.arrayCompatibilidad, comp.slotRam);
+        motherBoardsIntel.push(nuevo);
+        break;
+      case "CPU":
+        nuevo = new Componente(comp.nombre, comp.caracteristica, comp.precio, comp.arrayCompatibilidad);
+        cpus.push(nuevo);
+        break;
+      case "GPU":
+        nuevo = new Componente(comp.nombre, comp.caracteristica, comp.precio, comp.arrayCompatibilidad);
+        gpus.push(nuevo);
+        break;
+      case "RAM":
+        nuevo = new Componente(comp.nombre, comp.caracteristica, comp.precio, comp.arrayCompatibilidad);
+        rams.push(nuevo);
+        break;
+      case "Disco Duro":
+        nuevo = new Componente(comp.nombre, comp.caracteristica, comp.precio, comp.arrayCompatibilidad);
+        storages.push(nuevo);
+        break;
+      case "Fuente":
+        nuevo = new Componente(comp.nombre, comp.caracteristica, comp.precio, comp.arrayCompatibilidad);
+        psus.push(nuevo);
+        break;
+      case "Gabinete":
+        nuevo = new Componente(comp.nombre, comp.caracteristica, comp.precio, comp.arrayCompatibilidad);
+        cases.push(nuevo);
+        break;
+    }
+  }
+}
+const form = document.getElementById('form-nuevo-componente');
+if(form){
+  form.addEventListener('submit', e => {
+  e.preventDefault();
+  const tipoField = form.tipo;
+  let tipoValor = tipoField.value;
+  if (tipoValor === 'Placa Madre') {
+    tipoValor = form.marca.value;
+  }
+  const nombre = form.nombre.value.trim();
+  const caracteristica = form.caracteristica.value.trim();
+  const precio = parseFloat(form.precio.value);
+  const compat = form.compatibilidad.value
+    .split(',')
+    .map(s => s.trim())
+    .filter(s => s);
+  const slots = tipoValor.includes('Placa Madre') ? parseInt(form.slotsRam.value, 10) : undefined;
+  agregarComponente(tipoValor, nombre, caracteristica, precio, compat, slots);
+  form.reset();
+  location.reload();
+});
+}
 
+
+cargarComponentesLocales();
 
   //Funciones para agregar productos individuales al carrito:
 
