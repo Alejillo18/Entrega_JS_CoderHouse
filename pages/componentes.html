@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Planteo</title>
-    <link rel="stylesheet" href="/css/style.css" />
+    <title>Componentes</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="../css/style.css" />
     <link
       rel="shortcut icon"
       href="/assets/pc-display.svg"
@@ -24,31 +24,10 @@
         <button id="tema">🌕</button>
       </div>
     </header>
-    <main class="mainIndex">
-      <!-- Mostrar los Componentes en Stock -->
-      <section class="mostrarComponentes">
-        <h2>Componentes En stock</h2>
-        <a href="/pages/componentes.html"
-          >Pagina con todos nuestros componentes</a
-        >
-      </section>
-      <!-- Permitir comprar un componente -->
-      <section class="comprarComponente">
-        <h2>Comprar componente individual</h2>
-        <a href="/pages/comprar_Componentes.html">Comprar Componentes</a>
-      </section>
-      <!-- Armar tu propia PC -->
-      <section class="armarPC">
-        <h2>Arma tu propia Computadora</h2>
-        <a href="/pages/armar_pc.html">Comencemos</a>
-      </section>
-      <!-- Agregar un componente nuevo -->
-      <section>
-        <h2>Agregar un nuevo componente</h2>
-        <a href="/pages/agregar_comp.html">➕ Agregar Nuevo Componente</a>
-      </section>
+    <main>
+      <nav><a href="../index.html">Volver al menu principal</a></nav>
+      <div id="container"></div>
     </main>
-
     <!-- Carrito desplegable:-->
     <!-- Checkbox controlador -->
     <input type="checkbox" id="menu-toggle" />
@@ -63,12 +42,12 @@
     <label for="menu-toggle" class="overlay"></label>
 
     <footer>Simulador De Armado de Computadores 2025</footer>
-    <script src="main.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
       crossorigin="anonymous"
     ></script>
-    <script src="/js/tema.js"></script>
+    <script src="../js/tema.js"></script>
+    <script src="../main.js"></script>
   </body>
 </html>

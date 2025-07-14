@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agregar Nuevo Componente</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Agregar Nuevo Componente</h1>
+      <nav>
+        <a href="../index.html">← Volver al Inicio</a>
+      </nav>
+    </header>
+
+    <main>
+      <form id="form-nuevo-componente" class="formulario">
+        <label>
+          Tipo de Componente:
+          <select name="tipo" required>
+            <option value="CPU">CPU</option>
+            <option value="GPU">GPU</option>
+            <option value="RAM">RAM</option>
+            <option value="Disco Duro">Disco Duro</option>
+            <option value="Fuente">Fuente</option>
+            <option value="Gabinete">Gabinete</option>
+            <option value="Placa Madre">Placa Madre</option>
+          </select>
+        </label>
+
+        <div id="grupo-marca" style="display: none">
+          <label>
+            Marca de Placa Madre:
+            <select name="marca">
+              <option value="Placa Madre AMD">AMD</option>
+              <option value="Placa Madre Intel">Intel</option>
+            </select>
+          </label>
+        </div>
+
+        <label>
+          Nombre:
+          <input type="text" name="nombre" required />
+        </label>
+
+        <label>
+          Característica:
+          <input type="text" name="caracteristica" required />
+        </label>
+
+        <label>
+          Precio (USD):
+          <input type="number" name="precio" step="0.01" required />
+        </label>
+
+        <label>
+          Compatibilidad (separar con comas):
+          <input
+            type="text"
+            name="compatibilidad"
+            placeholder="Socket AM4, DDR4, etc."
+          />
+        </label>
+
+        <div id="grupo-slots" style="display: none">
+          <label>
+            Slots de RAM:
+            <input type="number" name="slotsRam" min="1" />
+          </label>
+        </div>
+
+        <button type="submit">Agregar Componente</button>
+      </form>
+    </main>
+
+    <script src="../main.js"></script>
+    <script>
+      // Mostrar/ocultar slots RAM
+      document
+        .querySelector('select[name="tipo"]')
+        .addEventListener("change", function () {
+          document.getElementById("grupo-slots").style.display =
+            this.value === "Placa Madre" ? "block" : "none";
+        });
+    </script>
+  </body>
+</html>
