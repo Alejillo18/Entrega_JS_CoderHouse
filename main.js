@@ -572,7 +572,7 @@
   if (containerComprarComponentes) {
     //placas madre AMD
     let tablaHTML = ``;
-    tablaHTML = `<div class = "titulo"><h2> Placas madre AMD</h2> <img src = "/assets/motherboard"></div>
+    tablaHTML = `<div class = "titulo"><h2> Placas madre AMD</h2> <img src = "../assets/motherboard.svg"></div>
     <table>
     <tr>
     <th>nombre</th>
@@ -662,7 +662,7 @@
     tablaHTML += `</table>`;
 
     //Memorias Ram
-    tablaHTML += `<div class = "titulo"><h2> Memorias Ram </h2> <img src = "/assets/memory"></div>
+    tablaHTML += `<div class = "titulo"><h2> Memorias Ram </h2> <img src = "../assets/memory.svg"></div>
     <table>
     <tr>
     <th>nombre</th>
@@ -783,7 +783,7 @@
     tablaHTML += `</table>`;
 
     //Gabinetes
-    tablaHTML += `<div class = "titulo"><h2> Gabinetes </h2> <img src = "/assets/pc"></div>
+    tablaHTML += `<div class = "titulo"><h2> Gabinetes </h2> <img src = "../assets/pc.svg"></div>
     <table>
     <tr>
     <th>nombre</th>
