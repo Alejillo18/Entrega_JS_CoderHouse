@@ -140,11 +140,13 @@
 
   document
     .querySelector('select[name="tipo"]')
-    .addEventListener("change", function () {
+    if(document){
+       document.addEventListener("change", function () {
       document.getElementById("grupo-slots").style.display =
         this.value === "Placa Madre" ? "block" : "none";
     });
-
+    }
+   
   //Funciones para agregar componentes:
   function agregarComponente(
     tipo,
