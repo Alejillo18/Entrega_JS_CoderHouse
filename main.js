@@ -138,14 +138,16 @@
     ["Full Tower con vidrio templado", "ATX", 60000, ["ATX"]],
   ]);
 
-  document
-    .querySelector('select[name="tipo"]')
-    if(document){
-       document.addEventListener("change", function () {
-      document.getElementById("grupo-slots").style.display =
-        this.value === "Placa Madre" ? "block" : "none";
-    });
-    }
+
+   const placa =  document.querySelector('select[name="tipo"]')
+   if (placa){
+    placa.addEventListener("change", function() {
+        const esPlacaMadre = this.value === "Placa Madre";
+        document.getElementById("grupo-slots").style.display = esPlacaMadre ? "block" : "none";
+        document.getElementById("grupo-marca").style.display = esPlacaMadre ? "block" : "none";
+      });
+   }
+   
    
   //Funciones para agregar componentes:
   function agregarComponente(
