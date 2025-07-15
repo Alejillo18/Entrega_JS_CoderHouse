@@ -138,116 +138,231 @@
     ["Full Tower con vidrio templado", "ATX", 60000, ["ATX"]],
   ]);
 
-//Funciones para agregar componentes:
-function agregarComponente(tipo, nombre, caracteristica, precio, arrayCompatibilidad, slotRam) {
-  let nuevoComponente;
-  const componenteBase = { tipo, nombre, caracteristica, precio, arrayCompatibilidad, slotRam };
+  document
+    .querySelector('select[name="tipo"]')
+    .addEventListener("change", function () {
+      document.getElementById("grupo-slots").style.display =
+        this.value === "Placa Madre" ? "block" : "none";
+    });
 
-  switch (tipo) {
-    case "Placa Madre AMD":
-      nuevoComponente = new PlacaMadre(nombre, caracteristica, precio, arrayCompatibilidad, slotRam);
-      motherBoardsAMD.push(nuevoComponente);
-      break;
-    case "Placa Madre Intel":
-      nuevoComponente = new PlacaMadre(nombre, caracteristica, precio, arrayCompatibilidad, slotRam);
-      motherBoardsIntel.push(nuevoComponente);
-      break;
-    case "CPU":
-      nuevoComponente = new Componente(nombre, caracteristica, precio, arrayCompatibilidad);
-      cpus.push(nuevoComponente);
-      break;
-    case "GPU":
-      nuevoComponente = new Componente(nombre, caracteristica, precio, arrayCompatibilidad);
-      gpus.push(nuevoComponente);
-      break;
-    case "RAM":
-      nuevoComponente = new Componente(nombre, caracteristica, precio, arrayCompatibilidad);
-      rams.push(nuevoComponente);
-      break;
-    case "Disco Duro":
-      nuevoComponente = new Componente(nombre, caracteristica, precio, arrayCompatibilidad);
-      storages.push(nuevoComponente);
-      break;
-    case "Fuente":
-      nuevoComponente = new Componente(nombre, caracteristica, precio, arrayCompatibilidad);
-      psus.push(nuevoComponente);
-      break;
-    case "Gabinete":
-      nuevoComponente = new Componente(nombre, caracteristica, precio, arrayCompatibilidad);
-      cases.push(nuevoComponente);
-      break;
-  }
+  //Funciones para agregar componentes:
+  function agregarComponente(
+    tipo,
+    nombre,
+    caracteristica,
+    precio,
+    arrayCompatibilidad,
+    slotRam
+  ) {
+    let nuevoComponente;
+    const componenteBase = {
+      tipo,
+      nombre,
+      caracteristica,
+      precio,
+      arrayCompatibilidad,
+      slotRam,
+    };
 
-  const guardados = JSON.parse(localStorage.getItem("componentesAgregados")) || [];
-  guardados.push(componenteBase);
-  localStorage.setItem("componentesAgregados", JSON.stringify(guardados));
-}
-
-function cargarComponentesLocales() {
-  const guardados = JSON.parse(localStorage.getItem('componentesAgregados')) || [];
-  for (const comp of guardados) {
-    let nuevo;
-    switch (comp.tipo) {
+    switch (tipo) {
       case "Placa Madre AMD":
-        nuevo = new PlacaMadre(comp.nombre, comp.caracteristica, comp.precio, comp.arrayCompatibilidad, comp.slotRam);
-        motherBoardsAMD.push(nuevo);
+        nuevoComponente = new PlacaMadre(
+          nombre,
+          caracteristica,
+          precio,
+          arrayCompatibilidad,
+          slotRam
+        );
+        motherBoardsAMD.push(nuevoComponente);
         break;
       case "Placa Madre Intel":
-        nuevo = new PlacaMadre(comp.nombre, comp.caracteristica, comp.precio, comp.arrayCompatibilidad, comp.slotRam);
-        motherBoardsIntel.push(nuevo);
+        nuevoComponente = new PlacaMadre(
+          nombre,
+          caracteristica,
+          precio,
+          arrayCompatibilidad,
+          slotRam
+        );
+        motherBoardsIntel.push(nuevoComponente);
         break;
       case "CPU":
-        nuevo = new Componente(comp.nombre, comp.caracteristica, comp.precio, comp.arrayCompatibilidad);
-        cpus.push(nuevo);
+        nuevoComponente = new Componente(
+          nombre,
+          caracteristica,
+          precio,
+          arrayCompatibilidad
+        );
+        cpus.push(nuevoComponente);
         break;
       case "GPU":
-        nuevo = new Componente(comp.nombre, comp.caracteristica, comp.precio, comp.arrayCompatibilidad);
-        gpus.push(nuevo);
+        nuevoComponente = new Componente(
+          nombre,
+          caracteristica,
+          precio,
+          arrayCompatibilidad
+        );
+        gpus.push(nuevoComponente);
         break;
       case "RAM":
-        nuevo = new Componente(comp.nombre, comp.caracteristica, comp.precio, comp.arrayCompatibilidad);
-        rams.push(nuevo);
+        nuevoComponente = new Componente(
+          nombre,
+          caracteristica,
+          precio,
+          arrayCompatibilidad
+        );
+        rams.push(nuevoComponente);
         break;
       case "Disco Duro":
-        nuevo = new Componente(comp.nombre, comp.caracteristica, comp.precio, comp.arrayCompatibilidad);
-        storages.push(nuevo);
+        nuevoComponente = new Componente(
+          nombre,
+          caracteristica,
+          precio,
+          arrayCompatibilidad
+        );
+        storages.push(nuevoComponente);
         break;
       case "Fuente":
-        nuevo = new Componente(comp.nombre, comp.caracteristica, comp.precio, comp.arrayCompatibilidad);
-        psus.push(nuevo);
+        nuevoComponente = new Componente(
+          nombre,
+          caracteristica,
+          precio,
+          arrayCompatibilidad
+        );
+        psus.push(nuevoComponente);
         break;
       case "Gabinete":
-        nuevo = new Componente(comp.nombre, comp.caracteristica, comp.precio, comp.arrayCompatibilidad);
-        cases.push(nuevo);
+        nuevoComponente = new Componente(
+          nombre,
+          caracteristica,
+          precio,
+          arrayCompatibilidad
+        );
+        cases.push(nuevoComponente);
         break;
     }
-  }
-}
-const form = document.getElementById('form-nuevo-componente');
-if(form){
-  form.addEventListener('submit', e => {
-  e.preventDefault();
-  const tipoField = form.tipo;
-  let tipoValor = tipoField.value;
-  if (tipoValor === 'Placa Madre') {
-    tipoValor = form.marca.value;
-  }
-  const nombre = form.nombre.value.trim();
-  const caracteristica = form.caracteristica.value.trim();
-  const precio = parseFloat(form.precio.value);
-  const compat = form.compatibilidad.value
-    .split(',')
-    .map(s => s.trim())
-    .filter(s => s);
-  const slots = tipoValor.includes('Placa Madre') ? parseInt(form.slotsRam.value, 10) : undefined;
-  agregarComponente(tipoValor, nombre, caracteristica, precio, compat, slots);
-  form.reset();
-  location.reload();
-});
-}
 
+    const guardados =
+      JSON.parse(localStorage.getItem("componentesAgregados")) || [];
+    guardados.push(componenteBase);
+    localStorage.setItem("componentesAgregados", JSON.stringify(guardados));
+  }
 
-cargarComponentesLocales();
+  function cargarComponentesLocales() {
+    const guardados =
+      JSON.parse(localStorage.getItem("componentesAgregados")) || [];
+    for (const comp of guardados) {
+      let nuevo;
+      switch (comp.tipo) {
+        case "Placa Madre AMD":
+          nuevo = new PlacaMadre(
+            comp.nombre,
+            comp.caracteristica,
+            comp.precio,
+            comp.arrayCompatibilidad,
+            comp.slotRam
+          );
+          motherBoardsAMD.push(nuevo);
+          break;
+        case "Placa Madre Intel":
+          nuevo = new PlacaMadre(
+            comp.nombre,
+            comp.caracteristica,
+            comp.precio,
+            comp.arrayCompatibilidad,
+            comp.slotRam
+          );
+          motherBoardsIntel.push(nuevo);
+          break;
+        case "CPU":
+          nuevo = new Componente(
+            comp.nombre,
+            comp.caracteristica,
+            comp.precio,
+            comp.arrayCompatibilidad
+          );
+          cpus.push(nuevo);
+          break;
+        case "GPU":
+          nuevo = new Componente(
+            comp.nombre,
+            comp.caracteristica,
+            comp.precio,
+            comp.arrayCompatibilidad
+          );
+          gpus.push(nuevo);
+          break;
+        case "RAM":
+          nuevo = new Componente(
+            comp.nombre,
+            comp.caracteristica,
+            comp.precio,
+            comp.arrayCompatibilidad
+          );
+          rams.push(nuevo);
+          break;
+        case "Disco Duro":
+          nuevo = new Componente(
+            comp.nombre,
+            comp.caracteristica,
+            comp.precio,
+            comp.arrayCompatibilidad
+          );
+          storages.push(nuevo);
+          break;
+        case "Fuente":
+          nuevo = new Componente(
+            comp.nombre,
+            comp.caracteristica,
+            comp.precio,
+            comp.arrayCompatibilidad
+          );
+          psus.push(nuevo);
+          break;
+        case "Gabinete":
+          nuevo = new Componente(
+            comp.nombre,
+            comp.caracteristica,
+            comp.precio,
+            comp.arrayCompatibilidad
+          );
+          cases.push(nuevo);
+          break;
+      }
+    }
+  }
+  const form = document.getElementById("form-nuevo-componente");
+  if (form) {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const tipoField = form.tipo;
+      let tipoValor = tipoField.value;
+      if (tipoValor === "Placa Madre") {
+        tipoValor = form.marca.value;
+      }
+      const nombre = form.nombre.value.trim();
+      const caracteristica = form.caracteristica.value.trim();
+      const precio = parseFloat(form.precio.value);
+      const compat = form.compatibilidad.value
+        .split(",")
+        .map((s) => s.trim())
+        .filter((s) => s);
+      const slots = tipoValor.includes("Placa Madre")
+        ? parseInt(form.slotsRam.value, 10)
+        : undefined;
+      agregarComponente(
+        tipoValor,
+        nombre,
+        caracteristica,
+        precio,
+        compat,
+        slots
+      );
+      form.reset();
+      location.reload();
+    });
+  }
+
+  cargarComponentesLocales();
 
   //Funciones para agregar productos individuales al carrito:
 
@@ -256,7 +371,7 @@ cargarComponentesLocales();
   if (container) {
     //placas madre AMD
     let tablaHTML = ``;
-    tablaHTML = `<div class = "titulo"><h2> Placas madre AMD</h2> <img src = "/assets/motherboard.svg"></div>
+    tablaHTML = `<div class = "titulo"><h2> Placas madre AMD</h2> <img src = "../assets/motherboard.svg"></div>
     <table>
     <tr>
     <th>nombre</th>
@@ -279,7 +394,7 @@ cargarComponentesLocales();
     tablaHTML += `</table>`;
 
     //Placas madres intel
-    tablaHTML += `<div class = "titulo"><h2> Placas madre Intel</h2> <img src = "/assets/motherboard.svg"></div>
+    tablaHTML += `<div class = "titulo"><h2> Placas madre Intel</h2> <img src = "../assets/motherboard.svg"></div>
      <table>
     <tr>
     <th>nombre</th>
@@ -300,7 +415,7 @@ cargarComponentesLocales();
     });
     tablaHTML += `</table>`;
     //Procesadores
-    tablaHTML += `<div class = "titulo"><h2> Procesadores </h2> <img src = "/assets/cpu.svg"></div>
+    tablaHTML += `<div class = "titulo"><h2> Procesadores </h2> <img src = "../assets/cpu.svg"></div>
      <table>
     <tr>
     <th>nombre</th>
@@ -322,7 +437,7 @@ cargarComponentesLocales();
     tablaHTML += `</table>`;
 
     //Memorias Ram
-    tablaHTML += `<div class = "titulo"><h2> Memorias Ram </h2> <img src = "/assets/memory.svg"></div>
+    tablaHTML += `<div class = "titulo"><h2> Memorias Ram </h2> <img src = "../assets/memory.svg"></div>
     <table>
     <tr>
     <th>nombre</th>
@@ -344,7 +459,7 @@ cargarComponentesLocales();
     tablaHTML += `</table>`;
 
     //Placas de video
-    tablaHTML += `<div class = "titulo"><h2> Placas de video </h2> <img src = "/assets/gpu-card.svg"></div>
+    tablaHTML += `<div class = "titulo"><h2> Placas de video </h2> <img src = "../assets/gpu-card.svg"></div>
     <table>
     <tr>
     <th>nombre</th>
@@ -366,7 +481,7 @@ cargarComponentesLocales();
     tablaHTML += `</table>`;
 
     //Fuentes de alimentacion
-    tablaHTML += `<div class = "titulo"><h2> Fuentes de alimentación </h2> <img src = "/assets/power.svg"></div>
+    tablaHTML += `<div class = "titulo"><h2> Fuentes de alimentación </h2> <img src = "../assets/power.svg"></div>
     <table>
     <tr>
     <th>nombre</th>
@@ -389,7 +504,7 @@ cargarComponentesLocales();
     tablaHTML += `</table>`;
 
     //Discos duros
-    tablaHTML += `<div class = "titulo"><h2> Discos Duros </h2> <img src = "/assets/nvme.svg"></div>
+    tablaHTML += `<div class = "titulo"><h2> Discos Duros </h2> <img src = "../assets/nvme.svg"></div>
      <table>
     <tr>
     <th>nombre</th>
@@ -411,7 +526,7 @@ cargarComponentesLocales();
     tablaHTML += `</table>`;
 
     //Gabinetes
-    tablaHTML += `<div class = "titulo"><h2> Gabinetes </h2> <img src = "/assets/pc.svg"></div>
+    tablaHTML += `<div class = "titulo"><h2> Gabinetes </h2> <img src = "../assets/pc.svg"></div>
     <table>
     <tr>
     <th>nombre</th>
@@ -455,7 +570,7 @@ cargarComponentesLocales();
   if (containerComprarComponentes) {
     //placas madre AMD
     let tablaHTML = ``;
-    tablaHTML = `<div class = "titulo"><h2> Placas madre AMD</h2> <img src = "/assets/motherboard.svg"></div>
+    tablaHTML = `<div class = "titulo"><h2> Placas madre AMD</h2> <img src = "/assets/motherboard"></div>
     <table>
     <tr>
     <th>nombre</th>
@@ -486,7 +601,7 @@ cargarComponentesLocales();
     tablaHTML += `</table>`;
 
     //Placas madres intel
-    tablaHTML += `<div class = "titulo"><h2> Placas madre Intel</h2> <img src = "/assets/motherboard.svg"></div>
+    tablaHTML += `<div class = "titulo"><h2> Placas madre Intel</h2> <img src = "../assets/motherboard.svg"></div>
      <table>
     <tr>
     <th>nombre</th>
@@ -515,7 +630,7 @@ cargarComponentesLocales();
     });
     tablaHTML += `</table>`;
     //Procesadores
-    tablaHTML += `<div class = "titulo"><h2> Procesadores </h2> <img src = "/assets/cpu.svg"></div>
+    tablaHTML += `<div class = "titulo"><h2> Procesadores </h2> <img src = "../assets/cpu.svg"></div>
      <table>
     <tr>
     <th>nombre</th>
@@ -545,7 +660,7 @@ cargarComponentesLocales();
     tablaHTML += `</table>`;
 
     //Memorias Ram
-    tablaHTML += `<div class = "titulo"><h2> Memorias Ram </h2> <img src = "/assets/memory.svg"></div>
+    tablaHTML += `<div class = "titulo"><h2> Memorias Ram </h2> <img src = "/assets/memory"></div>
     <table>
     <tr>
     <th>nombre</th>
@@ -575,7 +690,7 @@ cargarComponentesLocales();
     tablaHTML += `</table>`;
 
     //Placas de video
-    tablaHTML += `<div class = "titulo"><h2> Placas de video </h2> <img src = "/assets/gpu-card.svg"></div>
+    tablaHTML += `<div class = "titulo"><h2> Placas de video </h2> <img src = "../assets/gpu-card.svg"></div>
     <table>
     <tr>
     <th>nombre</th>
@@ -605,7 +720,7 @@ cargarComponentesLocales();
     tablaHTML += `</table>`;
 
     //Fuentes de alimentacion
-    tablaHTML += `<div class = "titulo"><h2> Fuentes de alimentación </h2> <img src = "/assets/power.svg"></div>
+    tablaHTML += `<div class = "titulo"><h2> Fuentes de alimentación </h2> <img src = "../assets/power.svg"></div>
     <table>
     <tr>
     <th>nombre</th>
@@ -636,7 +751,7 @@ cargarComponentesLocales();
     tablaHTML += `</table>`;
 
     //Discos duros
-    tablaHTML += `<div class = "titulo"><h2> Discos Duros </h2> <img src = "/assets/nvme.svg"></div>
+    tablaHTML += `<div class = "titulo"><h2> Discos Duros </h2> <img src = "../assets/nvme.svg"></div>
      <table>
     <tr>
     <th>nombre</th>
@@ -666,7 +781,7 @@ cargarComponentesLocales();
     tablaHTML += `</table>`;
 
     //Gabinetes
-    tablaHTML += `<div class = "titulo"><h2> Gabinetes </h2> <img src = "/assets/pc.svg"></div>
+    tablaHTML += `<div class = "titulo"><h2> Gabinetes </h2> <img src = "/assets/pc"></div>
     <table>
     <tr>
     <th>nombre</th>
@@ -879,48 +994,50 @@ cargarComponentesLocales();
         </div>`;
       tablaProductosCarrito.innerHTML = tablaHTML;
       const carritoVaciar = document.getElementById("btnVaciarCarrito");
-      if(carritoVaciar)
-      {
+      if (carritoVaciar) {
         carritoVaciar.addEventListener("click", () => {
-        const keys = [];
-        for (let i = 0; i < sessionStorage.length; i++) {
-          const key = sessionStorage.key(i);
-          if (key && (key.startsWith("comp") || key.startsWith("pc"))) {
-            keys.push(key);
-          }
-        }
-        keys.forEach((key) => sessionStorage.removeItem(key));
-        ArmarElcarrito();
-      });
-      }
-      document.getElementById("btnPagarCarrito").addEventListener("click",()=>{
-        const menuToggle = document.getElementById("menu-toggle");
-        if(menuToggle) menuToggle.checked = false;
-        const card = document.createElement("div");
-        card.classList.add("card-gracias");
-        card.innerHTML=`
-        <p>Gracias por su compra!</p>
-        <button style =" margin-top 10px; padding: 5px; background-color: black; color: blue ">Cerrar</button>`;
-        document.body.appendChild(card);
-        card.style.display = "block";
-        const btnCerrar = card.querySelector("button");
-        btnCerrar.addEventListener("click",()=>{
-          card.remove();
           const keys = [];
-          for(let i = 0; i<sessionStorage.length; i++){
+          for (let i = 0; i < sessionStorage.length; i++) {
             const key = sessionStorage.key(i);
-            if(key && (key.startsWith("comp")|| key.startsWith("pc"))){
+            if (key && (key.startsWith("comp") || key.startsWith("pc"))) {
               keys.push(key);
             }
           }
-          keys.forEach((key)=>sessionStorage.removeItem(key))
+          keys.forEach((key) => sessionStorage.removeItem(key));
           ArmarElcarrito();
-        })
-      })
+        });
+      }
+      document
+        .getElementById("btnPagarCarrito")
+        .addEventListener("click", () => {
+          const menuToggle = document.getElementById("menu-toggle");
+          if (menuToggle) menuToggle.checked = false;
+          const card = document.createElement("div");
+          card.classList.add("card-gracias");
+          card.innerHTML = `
+        <p>Gracias por su compra!</p>
+        <button style =" margin-top 10px; padding: 5px; background-color: black; color: blue ">Cerrar</button>`;
+          document.body.appendChild(card);
+          card.style.display = "block";
+          const btnCerrar = card.querySelector("button");
+          btnCerrar.addEventListener("click", () => {
+            card.remove();
+            const keys = [];
+            for (let i = 0; i < sessionStorage.length; i++) {
+              const key = sessionStorage.key(i);
+              if (key && (key.startsWith("comp") || key.startsWith("pc"))) {
+                keys.push(key);
+              }
+            }
+            keys.forEach((key) => sessionStorage.removeItem(key));
+            ArmarElcarrito();
+          });
+        });
     } else {
-      if(tablaProductosCarrito){
-        tablaProductosCarrito.innerHTML = "<p>No hay productos en el carrito</p>";
-      }  
+      if (tablaProductosCarrito) {
+        tablaProductosCarrito.innerHTML =
+          "<p>No hay productos en el carrito</p>";
+      }
     }
   }
 
