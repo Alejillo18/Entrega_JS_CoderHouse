@@ -946,7 +946,7 @@
     let total = 0;
     const carrito = BuscarSessionStorage();
     const tablaProductosCarrito = document.getElementById("sidebar");
-    if (tablaProductosCarrito && carrito.length > 1) {
+    if (tablaProductosCarrito && carrito.length > 0 ) {
       let tablaHTML = ``;
       carrito.forEach((producto) => {
         if (!producto) return;
