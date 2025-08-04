@@ -321,5 +321,342 @@
     "precio": 50000,
     "arrayCompatibilidad": ["ATX"],
     "tipo": "Gabinete"
+  },
+  {
+    "nombre": "ASUS TUF GAMING X570-PLUS",
+    "caracteristica": "X570",
+    "precio": 135000,
+    "arrayCompatibilidad": ["Ryzen 5", "Ryzen 7", "Ryzen 9"],
+    "slotRam": 4,
+    "tipo": "Placa Madre AMD"
+  },
+  {
+    "nombre": "Gigabyte B550 AORUS PRO AC",
+    "caracteristica": "B550",
+    "precio": 110000,
+    "arrayCompatibilidad": ["Ryzen 5", "Ryzen 7"],
+    "slotRam": 4,
+    "tipo": "Placa Madre AMD"
+  },
+  {
+    "nombre": "ASRock X570 Taichi",
+    "caracteristica": "X570",
+    "precio": 185000,
+    "arrayCompatibilidad": ["Ryzen 5", "Ryzen 7", "Ryzen 9"],
+    "slotRam": 4,
+    "tipo": "Placa Madre AMD"
+  },
+
+  {
+    "nombre": "ASUS ROG MAXIMUS Z790 HERO",
+    "caracteristica": "Z790",
+    "precio": 220000,
+    "arrayCompatibilidad": ["i5", "i7", "i9"],
+    "slotRam": 4,
+    "tipo": "Placa Madre Intel"
+  },
+  {
+    "nombre": "MSI PRO Z790-P",
+    "caracteristica": "Z790",
+    "precio": 150000,
+    "arrayCompatibilidad": ["i5", "i7", "i9"],
+    "slotRam": 4,
+    "tipo": "Placa Madre Intel"
+  },
+  {
+    "nombre": "Gigabyte B760 AORUS ELITE AX",
+    "caracteristica": "B760",
+    "precio": 130000,
+    "arrayCompatibilidad": ["i3", "i5", "i7"],
+    "slotRam": 4,
+    "tipo": "Placa Madre Intel"
+  },
+
+  {
+    "nombre": "AMD Ryzen 9 7950X",
+    "caracteristica": "AM5",
+    "precio": 320000,
+    "arrayCompatibilidad": ["X670", "B650"],
+    "tipo": "CPU"
+  },
+  {
+    "nombre": "AMD Ryzen 7 7700X",
+    "caracteristica": "AM5",
+    "precio": 240000,
+    "arrayCompatibilidad": ["X670", "B650"],
+    "tipo": "CPU"
+  },
+  {
+    "nombre": "AMD Ryzen 5 7600X",
+    "caracteristica": "AM5",
+    "precio": 180000,
+    "arrayCompatibilidad": ["X670", "B650"],
+    "tipo": "CPU"
+  },
+  {
+    "nombre": "AMD Ryzen 7 5700X",
+    "caracteristica": "AM4",
+    "precio": 170000,
+    "arrayCompatibilidad": ["B450", "B550", "X570"],
+    "tipo": "CPU"
+  },
+
+  {
+    "nombre": "Intel Core i9 13900K",
+    "caracteristica": "LGA1700",
+    "precio": 320000,
+    "arrayCompatibilidad": ["B760", "Z790"],
+    "tipo": "CPU"
+  },
+  {
+    "nombre": "Intel Core i7 13700K",
+    "caracteristica": "LGA1700",
+    "precio": 250000,
+    "arrayCompatibilidad": ["B760", "Z790"],
+    "tipo": "CPU"
+  },
+  {
+    "nombre": "Intel Core i5 13600K",
+    "caracteristica": "LGA1700",
+    "precio": 200000,
+    "arrayCompatibilidad": ["B760", "Z790"],
+    "tipo": "CPU"
+  },
+  {
+    "nombre": "Intel Core i3 13100F",
+    "caracteristica": "LGA1700",
+    "precio": 90000,
+    "arrayCompatibilidad": ["H610", "B760", "Z790"],
+    "tipo": "CPU"
+  },
+
+  {
+    "nombre": "NVIDIA RTX 4090",
+    "caracteristica": "PCIe 4.0",
+    "precio": 950000,
+    "arrayCompatibilidad": ["PCIe 4.0"],
+    "tipo": "GPU"
+  },
+  {
+    "nombre": "NVIDIA RTX 4070",
+    "caracteristica": "PCIe 4.0",
+    "precio": 480000,
+    "arrayCompatibilidad": ["PCIe 4.0"],
+    "tipo": "GPU"
+  },
+  {
+    "nombre": "NVIDIA RTX 3060",
+    "caracteristica": "PCIe 4.0",
+    "precio": 220000,
+    "arrayCompatibilidad": ["PCIe 3.0", "PCIe 4.0"],
+    "tipo": "GPU"
+  },
+  {
+    "nombre": "NVIDIA RTX 3050",
+    "caracteristica": "PCIe 4.0",
+    "precio": 180000,
+    "arrayCompatibilidad": ["PCIe 3.0", "PCIe 4.0"],
+    "tipo": "GPU"
+  },
+
+  {
+    "nombre": "AMD Radeon RX 7900 XTX",
+    "caracteristica": "PCIe 4.0",
+    "precio": 700000,
+    "arrayCompatibilidad": ["PCIe 4.0"],
+    "tipo": "GPU"
+  },
+  {
+    "nombre": "AMD Radeon RX 7600 XT",
+    "caracteristica": "PCIe 4.0",
+    "precio": 250000,
+    "arrayCompatibilidad": ["PCIe 4.0"],
+    "tipo": "GPU"
+  },
+  {
+    "nombre": "AMD Radeon RX 6600 XT",
+    "caracteristica": "PCIe 4.0",
+    "precio": 200000,
+    "arrayCompatibilidad": ["PCIe 4.0"],
+    "tipo": "GPU"
+  },
+  {
+    "nombre": "AMD Radeon RX 6500 XT",
+    "caracteristica": "PCIe 4.0",
+    "precio": 150000,
+    "arrayCompatibilidad": ["PCIe 4.0"],
+    "tipo": "GPU"
+  },
+  {
+    "nombre": "64GB DDR5 6000MHz RGB",
+    "caracteristica": "DDR5",
+    "precio": 220000,
+    "arrayCompatibilidad": ["Z690", "Z790", "X670", "B650"],
+    "tipo": "RAM"
+  },
+  {
+    "nombre": "32GB DDR5 5200MHz",
+    "caracteristica": "DDR5",
+    "precio": 120000,
+    "arrayCompatibilidad": ["Z690", "Z790", "X670", "B650"],
+    "tipo": "RAM"
+  },
+  {
+    "nombre": "16GB DDR5 4800MHz",
+    "caracteristica": "DDR5",
+    "precio": 80000,
+    "arrayCompatibilidad": ["Z690", "Z790", "X670", "B650"],
+    "tipo": "RAM"
+  },
+  {
+    "nombre": "64GB DDR4 3600MHz",
+    "caracteristica": "DDR4",
+    "precio": 150000,
+    "arrayCompatibilidad": ["B450", "B550", "X570", "B660", "Z690", "Z790"],
+    "tipo": "RAM"
+  },
+  {
+    "nombre": "16GB DDR4 3200MHz RGB",
+    "caracteristica": "DDR4",
+    "precio": 60000,
+    "arrayCompatibilidad": ["B450", "B550", "X570", "B660", "Z690", "Z790"],
+    "tipo": "RAM"
+  },
+  {
+    "nombre": "8GB DDR4 3000MHz",
+    "caracteristica": "DDR4",
+    "precio": 25000,
+    "arrayCompatibilidad": ["B450", "B550", "X570", "B660", "Z690", "Z790"],
+    "tipo": "RAM"
+  },
+
+  {
+    "nombre": "SSD 4TB M.2 NVMe Gen4",
+    "caracteristica": "M.2 PCIe Gen4",
+    "precio": 180000,
+    "arrayCompatibilidad": ["M.2 NVMe"],
+    "tipo": "Disco Duro"
+  },
+  {
+    "nombre": "SSD 2TB SATA",
+    "caracteristica": "SATA",
+    "precio": 70000,
+    "arrayCompatibilidad": ["SATA"],
+    "tipo": "Disco Duro"
+  },
+  {
+    "nombre": "SSD 1TB PCIe Gen4",
+    "caracteristica": "M.2 PCIe Gen4",
+    "precio": 65000,
+    "arrayCompatibilidad": ["M.2 NVMe"],
+    "tipo": "Disco Duro"
+  },
+  {
+    "nombre": "SSD 480GB SATA",
+    "caracteristica": "SATA",
+    "precio": 25000,
+    "arrayCompatibilidad": ["SATA"],
+    "tipo": "Disco Duro"
+  },
+  {
+    "nombre": "SSD 2TB M.2 NVMe Gen3",
+    "caracteristica": "M.2 PCIe Gen3",
+    "precio": 90000,
+    "arrayCompatibilidad": ["M.2 NVMe"],
+    "tipo": "Disco Duro"
+  },
+
+  {
+    "nombre": "HDD 4TB",
+    "caracteristica": "SATA",
+    "precio": 60000,
+    "arrayCompatibilidad": ["SATA"],
+    "tipo": "Disco Duro"
+  },
+  {
+    "nombre": "HDD 6TB",
+    "caracteristica": "SATA",
+    "precio": 85000,
+    "arrayCompatibilidad": ["SATA"],
+    "tipo": "Disco Duro"
+  },
+  {
+    "nombre": "HDD 8TB",
+    "caracteristica": "SATA",
+    "precio": 120000,
+    "arrayCompatibilidad": ["SATA"],
+    "tipo": "Disco Duro"
+  },
+  {
+    "nombre": "1200W Certificada Platinum",
+    "caracteristica": "1200W",
+    "precio": 150000,
+    "arrayCompatibilidad": ["RTX 4090", "Configuraciones multi-GPU"],
+    "tipo": "Fuente"
+  },
+  {
+    "nombre": "550W Certificada Bronze",
+    "caracteristica": "550W",
+    "precio": 45000,
+    "arrayCompatibilidad": ["GPU media gama"],
+    "tipo": "Fuente"
+  },
+  {
+    "nombre": "650W Certificada Gold Modular",
+    "caracteristica": "650W",
+    "precio": 60000,
+    "arrayCompatibilidad": ["GPU media-alta gama"],
+    "tipo": "Fuente"
+  },
+  {
+    "nombre": "850W Certificada Gold",
+    "caracteristica": "850W",
+    "precio": 75000,
+    "arrayCompatibilidad": ["RTX 4080", "GPU high-end"],
+    "tipo": "Fuente"
+  },
+  {
+    "nombre": "750W Certificada Bronze",
+    "caracteristica": "750W",
+    "precio": 55000,
+    "arrayCompatibilidad": ["GPU media-alta gama"],
+    "tipo": "Fuente"
+  },
+
+  {
+    "nombre": "Gabinete Mini Tower Negro",
+    "caracteristica": "MicroATX",
+    "precio": 30000,
+    "arrayCompatibilidad": ["MicroATX"],
+    "tipo": "Gabinete"
+  },
+  {
+    "nombre": "Gabinete Mid Tower RGB",
+    "caracteristica": "ATX",
+    "precio": 45000,
+    "arrayCompatibilidad": ["ATX"],
+    "tipo": "Gabinete"
+  },
+  {
+    "nombre": "Gabinete Full Tower con Ventana",
+    "caracteristica": "E-ATX",
+    "precio": 70000,
+    "arrayCompatibilidad": ["E-ATX"],
+    "tipo": "Gabinete"
+  },
+  {
+    "nombre": "Gabinete ITX Ultra Compacto",
+    "caracteristica": "Mini-ITX",
+    "precio": 40000,
+    "arrayCompatibilidad": ["Mini-ITX"],
+    "tipo": "Gabinete"
+  },
+  {
+    "nombre": "Gabinete Dual Chamber",
+    "caracteristica": "ATX",
+    "precio": 60000,
+    "arrayCompatibilidad": ["ATX"],
+    "tipo": "Gabinete"
   }
+
 ]

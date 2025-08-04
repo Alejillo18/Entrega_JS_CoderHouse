@@ -1,35 +1,9 @@
+import { reconstruirDesdeJson } from "./reconstruir_objetos.js";
+import { motherBoardsAMD,motherBoardsIntel,cpus,gpus,rams,cases,storages,psus } from "./clases.js";
+import { Componente,PlacaMadre } from "./clases.js";
 //IIFE:
-
 (() => {
-  //Clases
-  //Clase componente, que cuenta con las caracteristicas que deben tener todos los componentes en nuestro simulador:
-  class Componente {
-    constructor(nombre, caracteristica, precio, arrayCompatibilidad) {
-      this.nombre = nombre;
-      this.caracteristica = caracteristica;
-      this.precio = precio;
-      this.arrayCompatibilidad = arrayCompatibilidad;
-      this.tipo = "Componente";
-    }
-    mostrarComponentes() {
-      console.log(
-        `nombre: ${this.nombre}, caracteristicas: ${this.caracteristica}, precio: ${this.precio}, Compatible: ${this.arrayCompatibilidad}`
-      );
-    }
-  }
-  //La clase placaMadre extiende de Componentes y agregamos el slot de las memorias ram
-  class PlacaMadre extends Componente {
-    constructor(nombre, caracteristica, precio, arrayCompatibilidad, slotRam) {
-      super(nombre, caracteristica, precio, arrayCompatibilidad);
-      this.slotRam = slotRam;
-      this.tipo = "Placa Madre";
-    }
-    mostrarComponentes() {
-      console.log(
-        `nombre: ${this.nombre}, caracteristicas: ${this.caracteristica}, precio: ${this.precio}, Compatible: ${arrayCompatibilidad}, slot de memorias ram: ${slotRam}`
-      );
-    }
-  }
+
 
   //Clase para el armado de la PC del usuario
   class Pc {
@@ -48,210 +22,7 @@
       return (subtotal * 1.05).toFixed(2);
     }
   }
-
-  //Convertimos nuestro array de datos anterior en nuestro objeto componentes o placaMadre
-  function crearAComponente(array) {
-    return array.map(
-      ([nombre, caracteristica, precio, arrayCompatibilidad]) =>
-        new Componente(nombre, caracteristica, precio, arrayCompatibilidad)
-    );
-  }
-
-  function crearAComponenteMB(array) {
-    return array.map(
-      ([nombre, caracteristica, precio, arrayCompatibilidad, slotRam]) =>
-        new PlacaMadre(
-          nombre,
-          caracteristica,
-          precio,
-          arrayCompatibilidad,
-          slotRam
-        )
-    );
-  }
-
-  //Convertimos el array de datos, en array de objetos
-
-  //Placas madre:
-  const motherBoardsAMD = crearAComponenteMB([
-    ["ASUS Prime B450M-A II", "B450", 70000, ["Ryzen 5", "Ryzen 7"], 4],
-    ["MSI B550M PRO-VDH WIFI", "B550", 95000, ["Ryzen 5", "Ryzen 7"], 4],
-    ["ASUS TUF Gaming X570-Plus", "X570", 130000, ["Ryzen 5", "Ryzen 7"], 4],
-  ]);
-
-  const motherBoardsIntel = crearAComponenteMB([
-    ["ASRock B660M-HDV", "B660", 80000, ["i5", "i7"], 2],
-    ["Gigabyte B660M DS3H DDR4", "B660", 95000, ["i5", "i7"], 4],
-    ["MSI Z690-A PRO DDR4", "Z690", 140000, ["i5", "i7"], 4],
-  ]);
-
-  //CPU:
-  const cpus = crearAComponente([
-    ["AMD Ryzen 5 5600", "AM4", 120000, ["B450", "B550", "X570"]],
-    ["AMD Ryzen 7 5800X", "AM4", 180000, ["B450", "B550", "X570"]],
-    ["Intel Core i5 12400F", "LGA1700", 130000, ["B660", "Z690"]],
-    ["Intel Core i7 12700K", "LGA1700", 200000, ["B660", "Z690"]],
-  ]);
-
-  //GPU
-  const gpus = crearAComponente([
-    ["NVIDIA RTX 4060", "PCIe 4.0", 250000, ["PCIe 3.0", "PCIe 4.0"]],
-    ["NVIDIA RTX 4070", "PCIe 4.0", 350000, ["PCIe 3.0", "PCIe 4.0"]],
-    ["AMD RX 6700 XT", "PCIe 4.0", 220000, ["PCIe 3.0", "PCIe 4.0"]],
-    ["AMD RX 7600", "PCIe 4.0", 280000, ["PCIe 3.0", "PCIe 4.0"]],
-  ]);
-
-  //RAM
-  const rams = crearAComponente([
-    [
-      "16GB DDR4 3200MHz",
-      "DDR4",
-      40000,
-      ["B450", "B550", "X570", "B660", "Z690"],
-    ],
-    [
-      "32GB DDR4 3600MHz",
-      "DDR4",
-      75000,
-      ["B450", "B550", "X570", "B660", "Z690"],
-    ],
-    ["16GB DDR5 5200MHz", "DDR5", 65000, ["Z690"]],
-    ["32GB DDR5 6000MHz", "DDR5", 110000, ["Z690"]],
-  ]);
-
-  //Discos duros:
-  const storages = crearAComponente([
-    ["SSD 480GB SATA", "SATA", 25000, ["SATA"]],
-    ["SSD 1TB M.2 NVMe", "M.2 PCIe", 50000, ["M.2 NVMe"]],
-    ["HDD 2TB", "SATA", 30000, ["SATA"]],
-  ]);
-
-  //Fuentes:
-  const psus = crearAComponente([
-    ["550W Certificada Bronze", "550W", 35000, ["hasta RTX 4060"]],
-    ["650W Certificada Gold", "650W", 55000, ["RTX 4070 o superior"]],
-  ]);
-
-  //Gabinetes:
-  const cases = crearAComponente([
-    ["Mid Tower con RGB", "ATX/MicroATX", 40000, ["ATX", "MicroATX"]],
-    ["Full Tower con vidrio templado", "ATX", 60000, ["ATX"]],
-  ]);
-
-
-   const placa =  document.querySelector('select[name="tipo"]')
-   if (placa){
-    placa.addEventListener("change", function() {
-        const esPlacaMadre = this.value === "Placa Madre";
-        document.getElementById("grupo-slots").style.display = esPlacaMadre ? "block" : "none";
-        document.getElementById("grupo-marca").style.display = esPlacaMadre ? "block" : "none";
-      });
-   }
-   
-   
-  //Funciones para agregar componentes:
-  function agregarComponente(
-    tipo,
-    nombre,
-    caracteristica,
-    precio,
-    arrayCompatibilidad,
-    slotRam
-  ) {
-    let nuevoComponente;
-    const componenteBase = {
-      tipo,
-      nombre,
-      caracteristica,
-      precio,
-      arrayCompatibilidad,
-      slotRam,
-    };
-
-    switch (tipo) {
-      case "Placa Madre AMD":
-        nuevoComponente = new PlacaMadre(
-          nombre,
-          caracteristica,
-          precio,
-          arrayCompatibilidad,
-          slotRam
-        );
-        motherBoardsAMD.push(nuevoComponente);
-        break;
-      case "Placa Madre Intel":
-        nuevoComponente = new PlacaMadre(
-          nombre,
-          caracteristica,
-          precio,
-          arrayCompatibilidad,
-          slotRam
-        );
-        motherBoardsIntel.push(nuevoComponente);
-        break;
-      case "CPU":
-        nuevoComponente = new Componente(
-          nombre,
-          caracteristica,
-          precio,
-          arrayCompatibilidad
-        );
-        cpus.push(nuevoComponente);
-        break;
-      case "GPU":
-        nuevoComponente = new Componente(
-          nombre,
-          caracteristica,
-          precio,
-          arrayCompatibilidad
-        );
-        gpus.push(nuevoComponente);
-        break;
-      case "RAM":
-        nuevoComponente = new Componente(
-          nombre,
-          caracteristica,
-          precio,
-          arrayCompatibilidad
-        );
-        rams.push(nuevoComponente);
-        break;
-      case "Disco Duro":
-        nuevoComponente = new Componente(
-          nombre,
-          caracteristica,
-          precio,
-          arrayCompatibilidad
-        );
-        storages.push(nuevoComponente);
-        break;
-      case "Fuente":
-        nuevoComponente = new Componente(
-          nombre,
-          caracteristica,
-          precio,
-          arrayCompatibilidad
-        );
-        psus.push(nuevoComponente);
-        break;
-      case "Gabinete":
-        nuevoComponente = new Componente(
-          nombre,
-          caracteristica,
-          precio,
-          arrayCompatibilidad
-        );
-        cases.push(nuevoComponente);
-        break;
-    }
-
-    const guardados =
-      JSON.parse(localStorage.getItem("componentesAgregados")) || [];
-    guardados.push(componenteBase);
-    localStorage.setItem("componentesAgregados", JSON.stringify(guardados));
-  }
-
-  function cargarComponentesLocales() {
+ function cargarComponentesLocales() {
     const guardados =
       JSON.parse(localStorage.getItem("componentesAgregados")) || [];
     for (const comp of guardados) {
@@ -334,43 +105,27 @@
       }
     }
   }
-  const form = document.getElementById("form-nuevo-componente");
-  if (form) {
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const tipoField = form.tipo;
-      let tipoValor = tipoField.value;
-      if (tipoValor === "Placa Madre") {
-        tipoValor = form.marca.value;
-      }
-      const nombre = form.nombre.value.trim();
-      const caracteristica = form.caracteristica.value.trim();
-      const precio = parseFloat(form.precio.value);
-      const compat = form.compatibilidad.value
-        .split(",")
-        .map((s) => s.trim())
-        .filter((s) => s);
-      const slots = tipoValor.includes("Placa Madre")
-        ? parseInt(form.slotsRam.value, 10)
-        : undefined;
-      agregarComponente(
-        tipoValor,
-        nombre,
-        caracteristica,
-        precio,
-        compat,
-        slots
-      );
-      form.reset();
-      location.reload();
-    });
-  }
-
   cargarComponentesLocales();
 
-  //Funciones para agregar productos individuales al carrito:
+  //Simulamos el llamado de una API,a nuestro json componentes.json subido en github:
 
-  //1 mostrar todos los componentes: En componentes.html
+  fetch("https://raw.githubusercontent.com/Alejillo18/Entrega_JS_CoderHouse/refs/heads/main/componentes/componentes.json")
+  .then(response => response.json())  
+  .then(data => {
+    reconstruirDesdeJson(data)
+    generarTablaComponentes();
+    generarTablaComprarComponentes();
+    configurarBotonesAgregar();
+  })
+  .catch(error => {
+    alert(error)
+    generarTablaComponentes();
+    generarTablaComprarComponentes();
+    configurarBotonesAgregar();
+  });
+
+
+  function generarTablaComponentes() {
   let container = document.getElementById("container");
   if (container) {
     //placas madre AMD
@@ -552,22 +307,10 @@
     tablaHTML += `</table>`;
     container.innerHTML += tablaHTML;
   }
+}
 
-  function getIdComp() {
-    let comp = 0;
-    for (let i = 0; i < sessionStorage.length; i++) {
-      let key = sessionStorage.key(i);
-      if (key.startsWith("comp")) {
-        let producto = JSON.parse(sessionStorage.getItem(key));
-        if (producto.tipo === "Componente" || producto.tipo === "Placa Madre") {
-          comp += 1;
-        }
-      }
-    }
-    return comp;
-  }
 
-  //Mostrar todos los componentes en comprar_Componentes.html, con una caja de texto para ingresar la cantidad que desea y un boton para agregarlos al carrito:
+function generarTablaComprarComponentes(){
   let containerComprarComponentes = document.getElementById(
     "containerComprarComponentes"
   );
@@ -815,7 +558,9 @@
     tablaHTML += `</table>`;
     containerComprarComponentes.innerHTML += tablaHTML;
   }
+}
 
+function configurarBotonesAgregar() {    
   //Listeners a todos los botones:
   document.querySelectorAll(".AgregarComp").forEach((btn) => {
     btn.addEventListener("click", (element) => {
@@ -865,13 +610,168 @@
       }
 
       for (let i = 0; i < cantidad; i++) {
-        productoJSON = JSON.stringify(productoOriginal);
+        const productoJSON = JSON.stringify(productoOriginal);
         const id = getIdComp() + 1;
         sessionStorage.setItem("comp" + id, productoJSON);
       }
       ArmarElcarrito();
     });
   });
+  }
+   
+   
+  //Funciones para agregar componentes:
+  function agregarComponente(
+    tipo,
+    nombre,
+    caracteristica,
+    precio,
+    arrayCompatibilidad,
+    slotRam
+  ) {
+    let nuevoComponente;
+    const componenteBase = {
+      tipo,
+      nombre,
+      caracteristica,
+      precio,
+      arrayCompatibilidad,
+      slotRam,
+    };
+
+    switch (tipo) {
+      case "Placa Madre AMD":
+        nuevoComponente = new PlacaMadre(
+          nombre,
+          caracteristica,
+          precio,
+          arrayCompatibilidad,
+          slotRam
+        );
+        motherBoardsAMD.push(nuevoComponente);
+        break;
+      case "Placa Madre Intel":
+        nuevoComponente = new PlacaMadre(
+          nombre,
+          caracteristica,
+          precio,
+          arrayCompatibilidad,
+          slotRam
+        );
+        motherBoardsIntel.push(nuevoComponente);
+        break;
+      case "CPU":
+        nuevoComponente = new Componente(
+          nombre,
+          caracteristica,
+          precio,
+          arrayCompatibilidad
+        );
+        cpus.push(nuevoComponente);
+        break;
+      case "GPU":
+        nuevoComponente = new Componente(
+          nombre,
+          caracteristica,
+          precio,
+          arrayCompatibilidad
+        );
+        gpus.push(nuevoComponente);
+        break;
+      case "RAM":
+        nuevoComponente = new Componente(
+          nombre,
+          caracteristica,
+          precio,
+          arrayCompatibilidad
+        );
+        rams.push(nuevoComponente);
+        break;
+      case "Disco Duro":
+        nuevoComponente = new Componente(
+          nombre,
+          caracteristica,
+          precio,
+          arrayCompatibilidad
+        );
+        storages.push(nuevoComponente);
+        break;
+      case "Fuente":
+        nuevoComponente = new Componente(
+          nombre,
+          caracteristica,
+          precio,
+          arrayCompatibilidad
+        );
+        psus.push(nuevoComponente);
+        break;
+      case "Gabinete":
+        nuevoComponente = new Componente(
+          nombre,
+          caracteristica,
+          precio,
+          arrayCompatibilidad
+        );
+        cases.push(nuevoComponente);
+        break;
+    }
+
+    const guardados =
+      JSON.parse(localStorage.getItem("componentesAgregados")) || [];
+    guardados.push(componenteBase);
+    localStorage.setItem("componentesAgregados", JSON.stringify(guardados));
+  }
+
+ 
+  const form = document.getElementById("form-nuevo-componente");
+  if (form) {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const tipoField = form.tipo;
+      let tipoValor = tipoField.value;
+      if (tipoValor === "Placa Madre") {
+        tipoValor = form.marca.value;
+      }
+      const nombre = form.nombre.value.trim();
+      const caracteristica = form.caracteristica.value.trim();
+      const precio = parseFloat(form.precio.value);
+      const compat = form.compatibilidad.value
+        .split(",")
+        .map((s) => s.trim())
+        .filter((s) => s);
+      const slots = tipoValor.includes("Placa Madre")
+        ? parseInt(form.slotsRam.value, 10)
+        : undefined;
+      agregarComponente(
+        tipoValor,
+        nombre,
+        caracteristica,
+        precio,
+        compat,
+        slots
+      );
+      form.reset();
+      location.reload();
+    });
+  }
+
+
+
+  function getIdComp() {
+    let comp = 0;
+    for (let i = 0; i < sessionStorage.length; i++) {
+      let key = sessionStorage.key(i);
+      if (key.startsWith("comp")) {
+        let producto = JSON.parse(sessionStorage.getItem(key));
+        if (producto.tipo === "Componente" || producto.tipo === "Placa Madre") {
+          comp += 1;
+        }
+      }
+    }
+    return comp;
+  }
+
+
 
   //Funcion para precios con punto
   function preciosPunto(precio) {
@@ -1091,7 +991,7 @@
     let buttonContinuar = document.getElementById("continuar");
     buttonCarro.addEventListener("click", () => {
       const indice = getIdPc() + 1;
-      pcJSON = JSON.stringify(pc);
+      const pcJSON = JSON.stringify(pc);
       sessionStorage.setItem(`pc${indice}`, pcJSON);
       window.location.href = "../index.html";
     });
