@@ -43,7 +43,7 @@ header h1 {
   margin: 2rem 0;
   font-size: 2rem;
   font-weight: bold;
-  color: #004999;
+  color: #990000;
 }
 
 .titulo img {
@@ -97,7 +97,7 @@ footer {
   padding: 0.8rem 1rem;
   font-size: 1.2rem;
   font-weight: 500;
-  color: #004999;
+  color: #990000;
   text-decoration: none;
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(8px);
@@ -112,7 +112,7 @@ footer {
 
 a {
   text-decoration: none;
-  color: #0077cc;
+  color: #cc0000;
   position: relative;
   font-weight: 500;
 }
@@ -124,7 +124,7 @@ a::after {
   height: 2px;
   bottom: -2px;
   left: 0;
-  background-color: #0077cc;
+  background-color: #cc0000;
   transition: width 0.3s ease;
 }
 
@@ -284,4 +284,9 @@ tbody tr:nth-child(even) {
 
 #menu-toggle:checked ~ .menu-icon {
   left: 270px;
+}
+
+
+div > a {
+  margin-left : 20px;
 }
