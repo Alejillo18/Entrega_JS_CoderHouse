@@ -1,6 +1,7 @@
 import { reconstruirDesdeJson } from "./reconstruir_objetos.js";
 import { motherBoardsAMD,motherBoardsIntel,cpus,gpus,rams,cases,storages,psus } from "./clases.js";
 import { Componente,PlacaMadre } from "./clases.js";
+import Toastify from 'https://cdn.jsdelivr.net/npm/toastify-js@1.12.0/src/toastify-es.js'
 //IIFE:
 (() => {
 
@@ -619,7 +620,6 @@ function configurarBotonesAgregar() {
   });
   }
    
-   
   //Funciones para agregar componentes:
   function agregarComponente(
     tipo,
@@ -724,36 +724,67 @@ function configurarBotonesAgregar() {
 
  
   const form = document.getElementById("form-nuevo-componente");
-  if (form) {
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const tipoField = form.tipo;
-      let tipoValor = tipoField.value;
-      if (tipoValor === "Placa Madre") {
-        tipoValor = form.marca.value;
+const tipoField = form?.tipo;
+const grupoMarca = document.getElementById("grupo-marca");
+
+if (form && tipoField) {
+  // Mostrar u ocultar selector de marca
+  tipoField.addEventListener("change", () => {
+    if (tipoField.value === "Placa Madre") {
+      grupoMarca.style.display = "block";
+    } else {
+      grupoMarca.style.display = "none";
+    }
+  });
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    let tipoValor = tipoField.value;
+
+    if (tipoValor === "Placa Madre") {
+      const marca = form.marca.value;
+      if (!marca) {
+        alert("Debes seleccionar una marca para la Placa Madre (AMD o Intel)");
+        return;
       }
-      const nombre = form.nombre.value.trim();
-      const caracteristica = form.caracteristica.value.trim();
-      const precio = parseFloat(form.precio.value);
-      const compat = form.compatibilidad.value
-        .split(",")
-        .map((s) => s.trim())
-        .filter((s) => s);
-      const slots = tipoValor.includes("Placa Madre")
-        ? parseInt(form.slotsRam.value, 10)
-        : undefined;
-      agregarComponente(
-        tipoValor,
-        nombre,
-        caracteristica,
-        precio,
-        compat,
-        slots
-      );
-      form.reset();
-      location.reload();
-    });
-  }
+      tipoValor = marca;
+    }
+
+    const nombre = form.nombre.value.trim();
+    const caracteristica = form.caracteristica.value.trim();
+    const precio = parseFloat(form.precio.value);
+    const compat = form.compatibilidad.value
+      .split(",")
+      .map((s) => s.trim())
+      .filter((s) => s);
+    const slots = tipoValor.includes("Placa Madre")
+      ? parseInt(form.slotsRam.value, 10)
+      : undefined;
+
+    agregarComponente(
+      tipoValor,
+      nombre,
+      caracteristica,
+      precio,
+      compat,
+      slots
+    );
+
+    Toastify({
+      text: "✅ Componente agregado correctamente",
+      duration: 3000,
+      gravity: "top",
+      position: "right",
+      style: {
+        background: "linear-gradient(to right, #00b09b, #96c93d)",
+      },
+    }).showToast();
+
+    form.reset();
+    grupoMarca.style.display = "none";
+  });
+}
 
 
 
