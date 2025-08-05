@@ -930,1028 +930,450 @@
     "tipo": "Gabinete"
   },
   {
-    "nombre": "Componente Ficticio 1",
-    "caracteristica": "Carac-1",
-    "precio": 233757,
+    "nombre": "ASRock B650E PG RIPTIDE WIFI",
+    "caracteristica": "B650",
+    "precio": 140000,
     "arrayCompatibilidad": [
-      "Compat-1",
-      "Compat-19"
+      "Ryzen 5",
+      "Ryzen 7",
+      "Ryzen 9"
     ],
-    "tipo": "Fuente"
+    "slotRam": 4,
+    "tipo": "Placa Madre AMD"
   },
   {
-    "nombre": "Componente Ficticio 2",
-    "caracteristica": "Carac-2",
-    "precio": 116452,
+    "nombre": "MSI MAG B650 TOMAHAWK WIFI",
+    "caracteristica": "B650",
+    "precio": 155000,
     "arrayCompatibilidad": [
-      "Compat-3",
-      "Compat-17"
+      "Ryzen 5",
+      "Ryzen 7",
+      "Ryzen 9"
     ],
-    "tipo": "CPU"
+    "slotRam": 4,
+    "tipo": "Placa Madre AMD"
   },
   {
-    "nombre": "Componente Ficticio 3",
-    "caracteristica": "Carac-3",
-    "precio": 158303,
+    "nombre": "ASUS PRIME B450-PLUS",
+    "caracteristica": "B450",
+    "precio": 75000,
     "arrayCompatibilidad": [
-      "Compat-10",
-      "Compat-13"
+      "Ryzen 3",
+      "Ryzen 5"
     ],
-    "tipo": "Placa Madre Intel",
-    "slotRam": 2
+    "slotRam": 4,
+    "tipo": "Placa Madre AMD"
   },
   {
-    "nombre": "Componente Ficticio 4",
-    "caracteristica": "Carac-4",
-    "precio": 189963,
+    "nombre": "ASUS ROG STRIX B760-F GAMING",
+    "caracteristica": "B760",
+    "precio": 135000,
     "arrayCompatibilidad": [
-      "Compat-4",
-      "Compat-18"
+      "i3",
+      "i5",
+      "i7"
     ],
-    "tipo": "Disco Duro"
+    "slotRam": 4,
+    "tipo": "Placa Madre Intel"
   },
   {
-    "nombre": "Componente Ficticio 5",
-    "caracteristica": "Carac-5",
-    "precio": 120220,
+    "nombre": "Gigabyte Z790 AORUS MASTER",
+    "caracteristica": "Z790",
+    "precio": 240000,
     "arrayCompatibilidad": [
-      "Compat-10",
-      "Compat-16"
+      "i5",
+      "i7",
+      "i9"
     ],
-    "tipo": "RAM"
+    "slotRam": 4,
+    "tipo": "Placa Madre Intel"
   },
   {
-    "nombre": "Componente Ficticio 6",
-    "caracteristica": "Carac-6",
-    "precio": 151290,
+    "nombre": "MSI PRO H610M-B",
+    "caracteristica": "H610",
+    "precio": 70000,
     "arrayCompatibilidad": [
-      "Compat-2",
-      "Compat-13"
+      "i3",
+      "i5"
     ],
-    "tipo": "CPU"
+    "slotRam": 2,
+    "tipo": "Placa Madre Intel"
   },
   {
-    "nombre": "Componente Ficticio 7",
-    "caracteristica": "Carac-7",
-    "precio": 15208,
+    "nombre": "AMD Ryzen 7 7800X3D",
+    "caracteristica": "AM5",
+    "precio": 280000,
     "arrayCompatibilidad": [
-      "Compat-5",
-      "Compat-18"
-    ],
-    "tipo": "CPU"
-  },
-  {
-    "nombre": "Componente Ficticio 8",
-    "caracteristica": "Carac-8",
-    "precio": 64113,
-    "arrayCompatibilidad": [
-      "Compat-7",
-      "Compat-14"
-    ],
-    "tipo": "Fuente"
-  },
-  {
-    "nombre": "Componente Ficticio 9",
-    "caracteristica": "Carac-9",
-    "precio": 223669,
-    "arrayCompatibilidad": [
-      "Compat-9",
-      "Compat-12"
-    ],
-    "tipo": "RAM"
-  },
-  {
-    "nombre": "Componente Ficticio 10",
-    "caracteristica": "Carac-10",
-    "precio": 115202,
-    "arrayCompatibilidad": [
-      "Compat-3",
-      "Compat-11"
-    ],
-    "tipo": "Placa Madre AMD",
-    "slotRam": 2
-  },
-  {
-    "nombre": "Componente Ficticio 11",
-    "caracteristica": "Carac-11",
-    "precio": 236934,
-    "arrayCompatibilidad": [
-      "Compat-2",
-      "Compat-13"
-    ],
-    "tipo": "Disco Duro"
-  },
-  {
-    "nombre": "Componente Ficticio 12",
-    "caracteristica": "Carac-12",
-    "precio": 150293,
-    "arrayCompatibilidad": [
-      "Compat-7",
-      "Compat-12"
+      "X670",
+      "B650"
     ],
     "tipo": "CPU"
   },
   {
-    "nombre": "Componente Ficticio 13",
-    "caracteristica": "Carac-13",
-    "precio": 77234,
+    "nombre": "AMD Ryzen 5 7600",
+    "caracteristica": "AM5",
+    "precio": 160000,
     "arrayCompatibilidad": [
-      "Compat-8",
-      "Compat-14"
+      "X670",
+      "B650"
     ],
-    "tipo": "Placa Madre Intel",
-    "slotRam": 4
+    "tipo": "CPU"
   },
   {
-    "nombre": "Componente Ficticio 14",
-    "caracteristica": "Carac-14",
-    "precio": 200332,
+    "nombre": "Intel Core i9 14900K",
+    "caracteristica": "LGA1700",
+    "precio": 350000,
     "arrayCompatibilidad": [
-      "Compat-9",
-      "Compat-20"
+      "B760",
+      "Z790"
     ],
-    "tipo": "Disco Duro"
+    "tipo": "CPU"
   },
   {
-    "nombre": "Componente Ficticio 15",
-    "caracteristica": "Carac-15",
-    "precio": 131555,
+    "nombre": "Intel Core i5 14600K",
+    "caracteristica": "LGA1700",
+    "precio": 210000,
     "arrayCompatibilidad": [
-      "Compat-2",
-      "Compat-20"
+      "B760",
+      "Z790"
     ],
-    "tipo": "Placa Madre AMD",
-    "slotRam": 2
+    "tipo": "CPU"
   },
   {
-    "nombre": "Componente Ficticio 16",
-    "caracteristica": "Carac-16",
-    "precio": 215615,
+    "nombre": "Intel Core i3 14100F",
+    "caracteristica": "LGA1700",
+    "precio": 95000,
     "arrayCompatibilidad": [
-      "Compat-10",
-      "Compat-18"
+      "H610",
+      "B760",
+      "Z790"
     ],
-    "tipo": "Placa Madre Intel",
-    "slotRam": 2
+    "tipo": "CPU"
   },
   {
-    "nombre": "Componente Ficticio 17",
-    "caracteristica": "Carac-17",
-    "precio": 228692,
+    "nombre": "NVIDIA RTX 4060 Ti",
+    "caracteristica": "PCIe 4.0",
+    "precio": 320000,
     "arrayCompatibilidad": [
-      "Compat-8",
-      "Compat-20"
-    ],
-    "tipo": "Gabinete"
-  },
-  {
-    "nombre": "Componente Ficticio 18",
-    "caracteristica": "Carac-18",
-    "precio": 28954,
-    "arrayCompatibilidad": [
-      "Compat-1",
-      "Compat-19"
-    ],
-    "tipo": "Placa Madre Intel",
-    "slotRam": 2
-  },
-  {
-    "nombre": "Componente Ficticio 19",
-    "caracteristica": "Carac-19",
-    "precio": 95301,
-    "arrayCompatibilidad": [
-      "Compat-8",
-      "Compat-14"
-    ],
-    "tipo": "Gabinete"
-  },
-  {
-    "nombre": "Componente Ficticio 20",
-    "caracteristica": "Carac-20",
-    "precio": 28372,
-    "arrayCompatibilidad": [
-      "Compat-2",
-      "Compat-16"
-    ],
-    "tipo": "Placa Madre Intel",
-    "slotRam": 4
-  },
-  {
-    "nombre": "Componente Ficticio 21",
-    "caracteristica": "Carac-21",
-    "precio": 140652,
-    "arrayCompatibilidad": [
-      "Compat-2",
-      "Compat-20"
-    ],
-    "tipo": "Fuente"
-  },
-  {
-    "nombre": "Componente Ficticio 22",
-    "caracteristica": "Carac-22",
-    "precio": 139143,
-    "arrayCompatibilidad": [
-      "Compat-2",
-      "Compat-13"
-    ],
-    "tipo": "Gabinete"
-  },
-  {
-    "nombre": "Componente Ficticio 23",
-    "caracteristica": "Carac-23",
-    "precio": 97535,
-    "arrayCompatibilidad": [
-      "Compat-9",
-      "Compat-18"
-    ],
-    "tipo": "Fuente"
-  },
-  {
-    "nombre": "Componente Ficticio 24",
-    "caracteristica": "Carac-24",
-    "precio": 112807,
-    "arrayCompatibilidad": [
-      "Compat-8",
-      "Compat-15"
-    ],
-    "tipo": "Gabinete"
-  },
-  {
-    "nombre": "Componente Ficticio 25",
-    "caracteristica": "Carac-25",
-    "precio": 94869,
-    "arrayCompatibilidad": [
-      "Compat-4",
-      "Compat-14"
+      "PCIe 4.0"
     ],
     "tipo": "GPU"
   },
   {
-    "nombre": "Componente Ficticio 26",
-    "caracteristica": "Carac-26",
-    "precio": 81752,
+    "nombre": "NVIDIA RTX 3060 12GB",
+    "caracteristica": "PCIe 4.0",
+    "precio": 230000,
     "arrayCompatibilidad": [
-      "Compat-8",
-      "Compat-19"
-    ],
-    "tipo": "Fuente"
-  },
-  {
-    "nombre": "Componente Ficticio 27",
-    "caracteristica": "Carac-27",
-    "precio": 129219,
-    "arrayCompatibilidad": [
-      "Compat-7",
-      "Compat-14"
-    ],
-    "tipo": "Gabinete"
-  },
-  {
-    "nombre": "Componente Ficticio 28",
-    "caracteristica": "Carac-28",
-    "precio": 110493,
-    "arrayCompatibilidad": [
-      "Compat-10",
-      "Compat-11"
-    ],
-    "tipo": "RAM"
-  },
-  {
-    "nombre": "Componente Ficticio 29",
-    "caracteristica": "Carac-29",
-    "precio": 231884,
-    "arrayCompatibilidad": [
-      "Compat-1",
-      "Compat-17"
-    ],
-    "tipo": "Fuente"
-  },
-  {
-    "nombre": "Componente Ficticio 30",
-    "caracteristica": "Carac-30",
-    "precio": 39424,
-    "arrayCompatibilidad": [
-      "Compat-1",
-      "Compat-14"
+      "PCIe 3.0",
+      "PCIe 4.0"
     ],
     "tipo": "GPU"
   },
   {
-    "nombre": "Componente Ficticio 31",
-    "caracteristica": "Carac-31",
-    "precio": 11276,
+    "nombre": "AMD Radeon RX 6800 XT",
+    "caracteristica": "PCIe 4.0",
+    "precio": 380000,
     "arrayCompatibilidad": [
-      "Compat-4",
-      "Compat-19"
+      "PCIe 4.0"
+    ],
+    "tipo": "GPU"
+  },
+  {
+    "nombre": "Intel Arc A750",
+    "caracteristica": "PCIe 4.0",
+    "precio": 160000,
+    "arrayCompatibilidad": [
+      "PCIe 4.0"
+    ],
+    "tipo": "GPU"
+  },
+  {
+    "nombre": "48GB DDR5 5600MHz",
+    "caracteristica": "DDR5",
+    "precio": 170000,
+    "arrayCompatibilidad": [
+      "Z690",
+      "Z790",
+      "X670",
+      "B650"
+    ],
+    "tipo": "RAM"
+  },
+  {
+    "nombre": "64GB DDR4 4000MHz RGB",
+    "caracteristica": "DDR4",
+    "precio": 180000,
+    "arrayCompatibilidad": [
+      "B450",
+      "B550",
+      "X570",
+      "B660",
+      "Z690",
+      "Z790"
+    ],
+    "tipo": "RAM"
+  },
+  {
+    "nombre": "32GB DDR4 3600MHz CL16",
+    "caracteristica": "DDR4",
+    "precio": 95000,
+    "arrayCompatibilidad": [
+      "B450",
+      "B550",
+      "X570",
+      "B660",
+      "Z690",
+      "Z790"
+    ],
+    "tipo": "RAM"
+  },
+  {
+    "nombre": "SSD 4TB SATA",
+    "caracteristica": "SATA",
+    "precio": 90000,
+    "arrayCompatibilidad": [
+      "SATA"
+    ],
+    "tipo": "Disco Duro"
+  },
+  {
+    "nombre": "SSD 1TB M.2 NVMe Gen4",
+    "caracteristica": "M.2 PCIe Gen4",
+    "precio": 70000,
+    "arrayCompatibilidad": [
+      "M.2 NVMe"
+    ],
+    "tipo": "Disco Duro"
+  },
+  {
+    "nombre": "HDD 10TB",
+    "caracteristica": "SATA",
+    "precio": 140000,
+    "arrayCompatibilidad": [
+      "SATA"
+    ],
+    "tipo": "Disco Duro"
+  },
+  {
+    "nombre": "1600W Certificada Titanium",
+    "caracteristica": "1600W",
+    "precio": 180000,
+    "arrayCompatibilidad": [
+      "RTX 4090 SLI",
+      "Configuraciones extremas"
     ],
     "tipo": "Fuente"
   },
   {
-    "nombre": "Componente Ficticio 32",
-    "caracteristica": "Carac-32",
-    "precio": 153828,
+    "nombre": "500W Certificada Bronze",
+    "caracteristica": "500W",
+    "precio": 40000,
     "arrayCompatibilidad": [
-      "Compat-10",
-      "Compat-16"
-    ],
-    "tipo": "Gabinete"
-  },
-  {
-    "nombre": "Componente Ficticio 33",
-    "caracteristica": "Carac-33",
-    "precio": 75173,
-    "arrayCompatibilidad": [
-      "Compat-1",
-      "Compat-17"
-    ],
-    "tipo": "RAM"
-  },
-  {
-    "nombre": "Componente Ficticio 34",
-    "caracteristica": "Carac-34",
-    "precio": 130611,
-    "arrayCompatibilidad": [
-      "Compat-5",
-      "Compat-18"
+      "GPU media gama"
     ],
     "tipo": "Fuente"
   },
   {
-    "nombre": "Componente Ficticio 35",
-    "caracteristica": "Carac-35",
-    "precio": 214736,
+    "nombre": "Gabinete Mid Tower Blanco",
+    "caracteristica": "ATX",
+    "precio": 38000,
     "arrayCompatibilidad": [
-      "Compat-10",
-      "Compat-17"
+      "ATX"
+    ],
+    "tipo": "Gabinete"
+  },
+  {
+    "nombre": "Gabinete SFF Mini-ITX",
+    "caracteristica": "Mini-ITX",
+    "precio": 45000,
+    "arrayCompatibilidad": [
+      "Mini-ITX"
+    ],
+    "tipo": "Gabinete"
+  },
+  {
+    "nombre": "ASUS ROG CROSSHAIR X670E HERO",
+    "caracteristica": "X670",
+    "precio": 280000,
+    "arrayCompatibilidad": [
+      "Ryzen 5",
+      "Ryzen 7",
+      "Ryzen 9"
+    ],
+    "slotRam": 4,
+    "tipo": "Placa Madre AMD"
+  },
+  {
+    "nombre": "Gigabyte B650M AORUS ELITE AX",
+    "caracteristica": "B650",
+    "precio": 130000,
+    "arrayCompatibilidad": [
+      "Ryzen 5",
+      "Ryzen 7",
+      "Ryzen 9"
+    ],
+    "slotRam": 4,
+    "tipo": "Placa Madre AMD"
+  },
+  {
+    "nombre": "ASRock Z790 Taichi Lite",
+    "caracteristica": "Z790",
+    "precio": 200000,
+    "arrayCompatibilidad": [
+      "i5",
+      "i7",
+      "i9"
+    ],
+    "slotRam": 4,
+    "tipo": "Placa Madre Intel"
+  },
+  {
+    "nombre": "MSI MAG B760M MORTAR WIFI",
+    "caracteristica": "B760",
+    "precio": 125000,
+    "arrayCompatibilidad": [
+      "i3",
+      "i5",
+      "i7"
+    ],
+    "slotRam": 4,
+    "tipo": "Placa Madre Intel"
+  },
+  {
+    "nombre": "AMD Ryzen 9 7900X",
+    "caracteristica": "AM5",
+    "precio": 300000,
+    "arrayCompatibilidad": [
+      "X670",
+      "B650"
+    ],
+    "tipo": "CPU"
+  },
+  {
+    "nombre": "AMD Ryzen 5 8600G",
+    "caracteristica": "AM5",
+    "precio": 170000,
+    "arrayCompatibilidad": [
+      "X670",
+      "B650"
+    ],
+    "tipo": "CPU"
+  },
+  {
+    "nombre": "Intel Core i7 14700K",
+    "caracteristica": "LGA1700",
+    "precio": 270000,
+    "arrayCompatibilidad": [
+      "B760",
+      "Z790"
+    ],
+    "tipo": "CPU"
+  },
+  {
+    "nombre": "Intel Core i5 14400F",
+    "caracteristica": "LGA1700",
+    "precio": 175000,
+    "arrayCompatibilidad": [
+      "H610",
+      "B760",
+      "Z790"
+    ],
+    "tipo": "CPU"
+  },
+  {
+    "nombre": "NVIDIA RTX 4070 SUPER",
+    "caracteristica": "PCIe 4.0",
+    "precio": 520000,
+    "arrayCompatibilidad": [
+      "PCIe 4.0"
+    ],
+    "tipo": "GPU"
+  },
+  {
+    "nombre": "AMD Radeon RX 7700 XT",
+    "caracteristica": "PCIe 4.0",
+    "precio": 350000,
+    "arrayCompatibilidad": [
+      "PCIe 4.0"
+    ],
+    "tipo": "GPU"
+  },
+  {
+    "nombre": "48GB DDR5 6000MHz CL30",
+    "caracteristica": "DDR5",
+    "precio": 190000,
+    "arrayCompatibilidad": [
+      "Z690",
+      "Z790",
+      "X670",
+      "B650"
     ],
     "tipo": "RAM"
   },
   {
-    "nombre": "Componente Ficticio 36",
-    "caracteristica": "Carac-36",
-    "precio": 223560,
+    "nombre": "16GB DDR5 5200MHz SODIMM",
+    "caracteristica": "DDR5",
+    "precio": 75000,
     "arrayCompatibilidad": [
-      "Compat-4",
-      "Compat-18"
+      "Z690",
+      "Z790",
+      "X670",
+      "B650"
     ],
     "tipo": "RAM"
   },
   {
-    "nombre": "Componente Ficticio 37",
-    "caracteristica": "Carac-37",
-    "precio": 244723,
+    "nombre": "SSD 8TB M.2 NVMe Gen4",
+    "caracteristica": "M.2 PCIe Gen4",
+    "precio": 250000,
     "arrayCompatibilidad": [
-      "Compat-9",
-      "Compat-16"
-    ],
-    "tipo": "RAM"
-  },
-  {
-    "nombre": "Componente Ficticio 38",
-    "caracteristica": "Carac-38",
-    "precio": 213582,
-    "arrayCompatibilidad": [
-      "Compat-6",
-      "Compat-11"
-    ],
-    "tipo": "Placa Madre AMD",
-    "slotRam": 2
-  },
-  {
-    "nombre": "Componente Ficticio 39",
-    "caracteristica": "Carac-39",
-    "precio": 183413,
-    "arrayCompatibilidad": [
-      "Compat-8",
-      "Compat-20"
-    ],
-    "tipo": "Placa Madre AMD",
-    "slotRam": 2
-  },
-  {
-    "nombre": "Componente Ficticio 40",
-    "caracteristica": "Carac-40",
-    "precio": 113248,
-    "arrayCompatibilidad": [
-      "Compat-5",
-      "Compat-17"
+      "M.2 NVMe"
     ],
     "tipo": "Disco Duro"
   },
   {
-    "nombre": "Componente Ficticio 41",
-    "caracteristica": "Carac-41",
-    "precio": 126490,
+    "nombre": "SSD 256GB NVMe",
+    "caracteristica": "M.2 PCIe Gen3",
+    "precio": 20000,
     "arrayCompatibilidad": [
-      "Compat-8",
-      "Compat-12"
+      "M.2 NVMe"
     ],
-    "tipo": "Placa Madre Intel",
-    "slotRam": 4
+    "tipo": "Disco Duro"
   },
   {
-    "nombre": "Componente Ficticio 42",
-    "caracteristica": "Carac-42",
-    "precio": 212317,
+    "nombre": "HDD 12TB",
+    "caracteristica": "SATA",
+    "precio": 160000,
     "arrayCompatibilidad": [
-      "Compat-9",
-      "Compat-11"
+      "SATA"
+    ],
+    "tipo": "Disco Duro"
+  },
+  {
+    "nombre": "2000W Certificada Platinum",
+    "caracteristica": "2000W",
+    "precio": 220000,
+    "arrayCompatibilidad": [
+      "Configuraciones servidor"
     ],
     "tipo": "Fuente"
   },
   {
-    "nombre": "Componente Ficticio 43",
-    "caracteristica": "Carac-43",
-    "precio": 117648,
+    "nombre": "Gabinete Server Rack 4U",
+    "caracteristica": "E-ATX",
+    "precio": 85000,
     "arrayCompatibilidad": [
-      "Compat-8",
-      "Compat-16"
-    ],
-    "tipo": "CPU"
-  },
-  {
-    "nombre": "Componente Ficticio 44",
-    "caracteristica": "Carac-44",
-    "precio": 37199,
-    "arrayCompatibilidad": [
-      "Compat-6",
-      "Compat-19"
-    ],
-    "tipo": "CPU"
-  },
-  {
-    "nombre": "Componente Ficticio 45",
-    "caracteristica": "Carac-45",
-    "precio": 185446,
-    "arrayCompatibilidad": [
-      "Compat-7",
-      "Compat-11"
-    ],
-    "tipo": "RAM"
-  },
-  {
-    "nombre": "Componente Ficticio 46",
-    "caracteristica": "Carac-46",
-    "precio": 59107,
-    "arrayCompatibilidad": [
-      "Compat-4",
-      "Compat-15"
-    ],
-    "tipo": "Placa Madre AMD",
-    "slotRam": 4
-  },
-  {
-    "nombre": "Componente Ficticio 47",
-    "caracteristica": "Carac-47",
-    "precio": 159854,
-    "arrayCompatibilidad": [
-      "Compat-7",
-      "Compat-17"
-    ],
-    "tipo": "Disco Duro"
-  },
-  {
-    "nombre": "Componente Ficticio 48",
-    "caracteristica": "Carac-48",
-    "precio": 215777,
-    "arrayCompatibilidad": [
-      "Compat-7",
-      "Compat-13"
-    ],
-    "tipo": "Disco Duro"
-  },
-  {
-    "nombre": "Componente Ficticio 49",
-    "caracteristica": "Carac-49",
-    "precio": 125282,
-    "arrayCompatibilidad": [
-      "Compat-9",
-      "Compat-17"
-    ],
-    "tipo": "Fuente"
-  },
-  {
-    "nombre": "Componente Ficticio 50",
-    "caracteristica": "Carac-50",
-    "precio": 109821,
-    "arrayCompatibilidad": [
-      "Compat-3",
-      "Compat-19"
-    ],
-    "tipo": "GPU"
-  },
-  {
-    "nombre": "Componente Ficticio 51",
-    "caracteristica": "Carac-51",
-    "precio": 193854,
-    "arrayCompatibilidad": [
-      "Compat-2",
-      "Compat-13"
-    ],
-    "tipo": "RAM"
-  },
-  {
-    "nombre": "Componente Ficticio 52",
-    "caracteristica": "Carac-52",
-    "precio": 135946,
-    "arrayCompatibilidad": [
-      "Compat-1",
-      "Compat-12"
-    ],
-    "tipo": "Placa Madre AMD",
-    "slotRam": 4
-  },
-  {
-    "nombre": "Componente Ficticio 53",
-    "caracteristica": "Carac-53",
-    "precio": 51203,
-    "arrayCompatibilidad": [
-      "Compat-8",
-      "Compat-17"
-    ],
-    "tipo": "Placa Madre Intel",
-    "slotRam": 2
-  },
-  {
-    "nombre": "Componente Ficticio 54",
-    "caracteristica": "Carac-54",
-    "precio": 164349,
-    "arrayCompatibilidad": [
-      "Compat-8",
-      "Compat-12"
-    ],
-    "tipo": "Placa Madre Intel",
-    "slotRam": 2
-  },
-  {
-    "nombre": "Componente Ficticio 55",
-    "caracteristica": "Carac-55",
-    "precio": 44854,
-    "arrayCompatibilidad": [
-      "Compat-2",
-      "Compat-12"
-    ],
-    "tipo": "RAM"
-  },
-  {
-    "nombre": "Componente Ficticio 56",
-    "caracteristica": "Carac-56",
-    "precio": 176889,
-    "arrayCompatibilidad": [
-      "Compat-2",
-      "Compat-16"
-    ],
-    "tipo": "Placa Madre Intel",
-    "slotRam": 4
-  },
-  {
-    "nombre": "Componente Ficticio 57",
-    "caracteristica": "Carac-57",
-    "precio": 57356,
-    "arrayCompatibilidad": [
-      "Compat-7",
-      "Compat-15"
+      "E-ATX"
     ],
     "tipo": "Gabinete"
   },
   {
-    "nombre": "Componente Ficticio 58",
-    "caracteristica": "Carac-58",
-    "precio": 96815,
+    "nombre": "Gabinete Mini-ITX con Panel de Vidrio",
+    "caracteristica": "Mini-ITX",
+    "precio": 48000,
     "arrayCompatibilidad": [
-      "Compat-8",
-      "Compat-16"
-    ],
-    "tipo": "Disco Duro"
-  },
-  {
-    "nombre": "Componente Ficticio 59",
-    "caracteristica": "Carac-59",
-    "precio": 161077,
-    "arrayCompatibilidad": [
-      "Compat-10",
-      "Compat-20"
-    ],
-    "tipo": "Placa Madre Intel",
-    "slotRam": 2
-  },
-  {
-    "nombre": "Componente Ficticio 60",
-    "caracteristica": "Carac-60",
-    "precio": 105825,
-    "arrayCompatibilidad": [
-      "Compat-8",
-      "Compat-14"
-    ],
-    "tipo": "CPU"
-  },
-  {
-    "nombre": "Componente Ficticio 61",
-    "caracteristica": "Carac-61",
-    "precio": 238531,
-    "arrayCompatibilidad": [
-      "Compat-5",
-      "Compat-11"
-    ],
-    "tipo": "Disco Duro"
-  },
-  {
-    "nombre": "Componente Ficticio 62",
-    "caracteristica": "Carac-62",
-    "precio": 157290,
-    "arrayCompatibilidad": [
-      "Compat-7",
-      "Compat-20"
-    ],
-    "tipo": "RAM"
-  },
-  {
-    "nombre": "Componente Ficticio 63",
-    "caracteristica": "Carac-63",
-    "precio": 220826,
-    "arrayCompatibilidad": [
-      "Compat-8",
-      "Compat-20"
-    ],
-    "tipo": "Fuente"
-  },
-  {
-    "nombre": "Componente Ficticio 64",
-    "caracteristica": "Carac-64",
-    "precio": 93889,
-    "arrayCompatibilidad": [
-      "Compat-3",
-      "Compat-18"
-    ],
-    "tipo": "Disco Duro"
-  },
-  {
-    "nombre": "Componente Ficticio 65",
-    "caracteristica": "Carac-65",
-    "precio": 183615,
-    "arrayCompatibilidad": [
-      "Compat-5",
-      "Compat-14"
-    ],
-    "tipo": "GPU"
-  },
-  {
-    "nombre": "Componente Ficticio 66",
-    "caracteristica": "Carac-66",
-    "precio": 177995,
-    "arrayCompatibilidad": [
-      "Compat-4",
-      "Compat-12"
+      "Mini-ITX"
     ],
     "tipo": "Gabinete"
-  },
-  {
-    "nombre": "Componente Ficticio 67",
-    "caracteristica": "Carac-67",
-    "precio": 157281,
-    "arrayCompatibilidad": [
-      "Compat-9",
-      "Compat-17"
-    ],
-    "tipo": "Placa Madre Intel",
-    "slotRam": 2
-  },
-  {
-    "nombre": "Componente Ficticio 68",
-    "caracteristica": "Carac-68",
-    "precio": 141110,
-    "arrayCompatibilidad": [
-      "Compat-5",
-      "Compat-12"
-    ],
-    "tipo": "Placa Madre AMD",
-    "slotRam": 4
-  },
-  {
-    "nombre": "Componente Ficticio 69",
-    "caracteristica": "Carac-69",
-    "precio": 157143,
-    "arrayCompatibilidad": [
-      "Compat-6",
-      "Compat-17"
-    ],
-    "tipo": "CPU"
-  },
-  {
-    "nombre": "Componente Ficticio 70",
-    "caracteristica": "Carac-70",
-    "precio": 59561,
-    "arrayCompatibilidad": [
-      "Compat-2",
-      "Compat-17"
-    ],
-    "tipo": "RAM"
-  },
-  {
-    "nombre": "Componente Ficticio 71",
-    "caracteristica": "Carac-71",
-    "precio": 146583,
-    "arrayCompatibilidad": [
-      "Compat-8",
-      "Compat-17"
-    ],
-    "tipo": "Placa Madre Intel",
-    "slotRam": 4
-  },
-  {
-    "nombre": "Componente Ficticio 72",
-    "caracteristica": "Carac-72",
-    "precio": 237540,
-    "arrayCompatibilidad": [
-      "Compat-8",
-      "Compat-16"
-    ],
-    "tipo": "Placa Madre AMD",
-    "slotRam": 2
-  },
-  {
-    "nombre": "Componente Ficticio 73",
-    "caracteristica": "Carac-73",
-    "precio": 91351,
-    "arrayCompatibilidad": [
-      "Compat-3",
-      "Compat-20"
-    ],
-    "tipo": "Gabinete"
-  },
-  {
-    "nombre": "Componente Ficticio 74",
-    "caracteristica": "Carac-74",
-    "precio": 17230,
-    "arrayCompatibilidad": [
-      "Compat-2",
-      "Compat-11"
-    ],
-    "tipo": "GPU"
-  },
-  {
-    "nombre": "Componente Ficticio 75",
-    "caracteristica": "Carac-75",
-    "precio": 114342,
-    "arrayCompatibilidad": [
-      "Compat-3",
-      "Compat-11"
-    ],
-    "tipo": "Gabinete"
-  },
-  {
-    "nombre": "Componente Ficticio 76",
-    "caracteristica": "Carac-76",
-    "precio": 55273,
-    "arrayCompatibilidad": [
-      "Compat-10",
-      "Compat-14"
-    ],
-    "tipo": "Gabinete"
-  },
-  {
-    "nombre": "Componente Ficticio 77",
-    "caracteristica": "Carac-77",
-    "precio": 114956,
-    "arrayCompatibilidad": [
-      "Compat-2",
-      "Compat-18"
-    ],
-    "tipo": "RAM"
-  },
-  {
-    "nombre": "Componente Ficticio 78",
-    "caracteristica": "Carac-78",
-    "precio": 237067,
-    "arrayCompatibilidad": [
-      "Compat-4",
-      "Compat-19"
-    ],
-    "tipo": "Gabinete"
-  },
-  {
-    "nombre": "Componente Ficticio 79",
-    "caracteristica": "Carac-79",
-    "precio": 93972,
-    "arrayCompatibilidad": [
-      "Compat-2",
-      "Compat-15"
-    ],
-    "tipo": "GPU"
-  },
-  {
-    "nombre": "Componente Ficticio 80",
-    "caracteristica": "Carac-80",
-    "precio": 185048,
-    "arrayCompatibilidad": [
-      "Compat-4",
-      "Compat-17"
-    ],
-    "tipo": "CPU"
-  },
-  {
-    "nombre": "Componente Ficticio 81",
-    "caracteristica": "Carac-81",
-    "precio": 71766,
-    "arrayCompatibilidad": [
-      "Compat-10",
-      "Compat-19"
-    ],
-    "tipo": "GPU"
-  },
-  {
-    "nombre": "Componente Ficticio 82",
-    "caracteristica": "Carac-82",
-    "precio": 104340,
-    "arrayCompatibilidad": [
-      "Compat-8",
-      "Compat-14"
-    ],
-    "tipo": "Placa Madre Intel",
-    "slotRam": 4
-  },
-  {
-    "nombre": "Componente Ficticio 83",
-    "caracteristica": "Carac-83",
-    "precio": 10936,
-    "arrayCompatibilidad": [
-      "Compat-10",
-      "Compat-20"
-    ],
-    "tipo": "Placa Madre Intel",
-    "slotRam": 4
-  },
-  {
-    "nombre": "Componente Ficticio 84",
-    "caracteristica": "Carac-84",
-    "precio": 200392,
-    "arrayCompatibilidad": [
-      "Compat-7",
-      "Compat-16"
-    ],
-    "tipo": "Disco Duro"
-  },
-  {
-    "nombre": "Componente Ficticio 85",
-    "caracteristica": "Carac-85",
-    "precio": 69337,
-    "arrayCompatibilidad": [
-      "Compat-5",
-      "Compat-19"
-    ],
-    "tipo": "Gabinete"
-  },
-  {
-    "nombre": "Componente Ficticio 86",
-    "caracteristica": "Carac-86",
-    "precio": 125495,
-    "arrayCompatibilidad": [
-      "Compat-10",
-      "Compat-19"
-    ],
-    "tipo": "Placa Madre AMD",
-    "slotRam": 4
-  },
-  {
-    "nombre": "Componente Ficticio 87",
-    "caracteristica": "Carac-87",
-    "precio": 143055,
-    "arrayCompatibilidad": [
-      "Compat-2",
-      "Compat-15"
-    ],
-    "tipo": "CPU"
-  },
-  {
-    "nombre": "Componente Ficticio 88",
-    "caracteristica": "Carac-88",
-    "precio": 140063,
-    "arrayCompatibilidad": [
-      "Compat-6",
-      "Compat-13"
-    ],
-    "tipo": "GPU"
-  },
-  {
-    "nombre": "Componente Ficticio 89",
-    "caracteristica": "Carac-89",
-    "precio": 62835,
-    "arrayCompatibilidad": [
-      "Compat-8",
-      "Compat-20"
-    ],
-    "tipo": "RAM"
-  },
-  {
-    "nombre": "Componente Ficticio 90",
-    "caracteristica": "Carac-90",
-    "precio": 245105,
-    "arrayCompatibilidad": [
-      "Compat-10",
-      "Compat-17"
-    ],
-    "tipo": "CPU"
-  },
-  {
-    "nombre": "Componente Ficticio 91",
-    "caracteristica": "Carac-91",
-    "precio": 229218,
-    "arrayCompatibilidad": [
-      "Compat-8",
-      "Compat-15"
-    ],
-    "tipo": "Placa Madre Intel",
-    "slotRam": 4
-  },
-  {
-    "nombre": "Componente Ficticio 92",
-    "caracteristica": "Carac-92",
-    "precio": 141558,
-    "arrayCompatibilidad": [
-      "Compat-5",
-      "Compat-12"
-    ],
-    "tipo": "Fuente"
-  },
-  {
-    "nombre": "Componente Ficticio 93",
-    "caracteristica": "Carac-93",
-    "precio": 131950,
-    "arrayCompatibilidad": [
-      "Compat-10",
-      "Compat-19"
-    ],
-    "tipo": "Placa Madre AMD",
-    "slotRam": 4
-  },
-  {
-    "nombre": "Componente Ficticio 94",
-    "caracteristica": "Carac-94",
-    "precio": 184790,
-    "arrayCompatibilidad": [
-      "Compat-8",
-      "Compat-13"
-    ],
-    "tipo": "RAM"
-  },
-  {
-    "nombre": "Componente Ficticio 95",
-    "caracteristica": "Carac-95",
-    "precio": 69857,
-    "arrayCompatibilidad": [
-      "Compat-9",
-      "Compat-15"
-    ],
-    "tipo": "Disco Duro"
-  },
-  {
-    "nombre": "Componente Ficticio 96",
-    "caracteristica": "Carac-96",
-    "precio": 58420,
-    "arrayCompatibilidad": [
-      "Compat-3",
-      "Compat-12"
-    ],
-    "tipo": "Disco Duro"
-  },
-  {
-    "nombre": "Componente Ficticio 97",
-    "caracteristica": "Carac-97",
-    "precio": 30212,
-    "arrayCompatibilidad": [
-      "Compat-2",
-      "Compat-16"
-    ],
-    "tipo": "Gabinete"
-  },
-  {
-    "nombre": "Componente Ficticio 98",
-    "caracteristica": "Carac-98",
-    "precio": 61193,
-    "arrayCompatibilidad": [
-      "Compat-4",
-      "Compat-17"
-    ],
-    "tipo": "Disco Duro"
-  },
-  {
-    "nombre": "Componente Ficticio 99",
-    "caracteristica": "Carac-99",
-    "precio": 162197,
-    "arrayCompatibilidad": [
-      "Compat-5",
-      "Compat-16"
-    ],
-    "tipo": "GPU"
-  },
-  {
-    "nombre": "Componente Ficticio 100",
-    "caracteristica": "Carac-100",
-    "precio": 200107,
-    "arrayCompatibilidad": [
-      "Compat-4",
-      "Compat-18"
-    ],
-    "tipo": "CPU"
   }
 ]
