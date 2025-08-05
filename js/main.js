@@ -900,7 +900,18 @@ function configurarBotonesAgregar() {
       const carritoVaciar = document.getElementById("btnVaciarCarrito");
       if (carritoVaciar) {
         carritoVaciar.addEventListener("click", () => {
-          const keys = [];
+          Swal.fire({
+      title: "Seguro que desea vaciar su carrito?",
+      text: "Esta es una acción irreversible",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#30d646ff",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Borrar!",
+      cancelButtonText: "Cancelar"
+    }).then((result) => {
+     if (result.isConfirmed) {
+      const keys = [];
           for (let i = 0; i < sessionStorage.length; i++) {
             const key = sessionStorage.key(i);
             if (key && (key.startsWith("comp") || key.startsWith("pc"))) {
@@ -909,6 +920,13 @@ function configurarBotonesAgregar() {
           }
           keys.forEach((key) => sessionStorage.removeItem(key));
           ArmarElcarrito();
+        Swal.fire({
+          title: "Carrito Vaciado!",
+          icon: "success"
+        });
+      }
+    });
+          
         });
       }
       document
@@ -993,7 +1011,17 @@ function configurarBotonesAgregar() {
       const indice = getIdPc() + 1;
       const pcJSON = JSON.stringify(pc);
       sessionStorage.setItem(`pc${indice}`, pcJSON);
-      window.location.href = "../index.html";
+      /* Agregamos alerta de confirmacion */
+      Swal.fire({
+        title: "Computadora enviada a tu carrito",
+        showCancelButton: false,
+        confirmButtonText: "Continuar",
+        }).then((result) => {
+        if (result.isConfirmed) {
+         window.location.href = "../index.html";
+  }
+});
+     
     });
     buttonContinuar.addEventListener("click", () => {
       window.location.href = "../index.html";
