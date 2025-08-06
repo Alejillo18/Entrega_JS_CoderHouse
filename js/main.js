@@ -615,6 +615,16 @@ function configurarBotonesAgregar() {
         const id = getIdComp() + 1;
         sessionStorage.setItem("comp" + id, productoJSON);
       }
+      Toastify({
+      text: `✅ ${productoOriginal.nombre} agregado correctamente, cantidad : ${cantidad}`,
+      duration: 3000,
+      gravity: "top",
+      position: "right",
+      style: {
+        height : "40px",
+        background: "linear-gradient(#2600b0ff, #96c93d)",
+      },
+    }).showToast();
       ArmarElcarrito();
     });
   });
@@ -1121,7 +1131,7 @@ if (form && tipoField) {
     tablaHTML += `</table>`;
     if (placaVideo !== "") {
       let nombre = placaVideo.nombre.toLowerCase();
-      const gpusQueRequieren650W = ["rtx 4070", "rx 6700 xt", "rx 7600"];
+      const gpusQueRequieren650W = ["rtx 4070", "rx 6700 xt", "rx 7600","rtx 4080 super","rtx 4070 ti","rx 7900 xt","rx 7800 xt",];
       if (
         gpusQueRequieren650W.some((gpuRequerida) =>
           nombre.includes(gpuRequerida)

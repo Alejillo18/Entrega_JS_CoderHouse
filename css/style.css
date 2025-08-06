@@ -290,12 +290,3 @@ tbody tr:nth-child(even) {
 div > a {
   margin-left : 20px;
 }
-
-.toastify {
-  position: fixed !important;
-  top: 4rem !important;
-  right: 1rem !important;
-  z-index: 9999 !important;
-  margin: 0 !important;
-
-}

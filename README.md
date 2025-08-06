@@ -1,58 +1,54 @@
-# 💻 Entrega N°2 – Simulador de Armado de PC | CoderHouse JavaScript
+# Proyecto Final: Simulador de Armado de PC – Oviedo
 
-Este proyecto simula el proceso de armado de una computadora paso a paso, permitiendo al usuario seleccionar cada componente de forma visual e interactiva. Es una entrega correspondiente al curso de JavaScript de CoderHouse.
 
----
+## 🎯 Descripción  
+Simulador interactivo de armado de computadoras. Permite al usuario seleccionar paso a paso cada componente (placa madre, CPU, RAM, GPU, etc.), comprobar compatibilidades, y simular el proceso completo de compra.
 
-## 🎯 Objetivos del proyecto
 
-- Integrar JavaScript con HTML y CSS utilizando el **DOM** y **eventos**.
-- Simular un flujo de trabajo completo con entrada, procesamiento y salida.
-- Almacenar datos generados por el usuario en `localStorage` y `sessionStorage`.
-- Desarrollar una interfaz amigable sin uso de `prompt()` ni `alert()`.
-
----
-
-## 🧠 Funcionalidades principales
-
-- 🧩 **Selección dinámica de componentes**: Placa madre, procesador, RAM, GPU, almacenamiento, fuente y gabinete.
-- 🔄 **Compatibilidad lógica** entre componentes (ej.: CPUs compatibles con motherboards).
-- 🛒 **Carrito de compras** donde se almacenan PCs armadas.
-- 💡 **Cambio de tema** claro/oscuro con persistencia en `localStorage`.
-- 💾 **Persistencia de datos**: la PC armada y sus componentes se guardan en `sessionStorage`.
-
----
-
-## 🗂 Estructura del proyecto
-
+## 📦 Estructura del proyecto  
 ```
 Entrega_JS_CoderHouse/
 ├── index.html
-├── main.js
+├── armado_pc.html
+├── agregar_comp.html
+├── componentes.json           #cargado vía fetch
 ├── css/
 │   └── style.css
 ├── js/
-│   └── tema.js
-├── assets/
-│   └── (íconos SVG)
-├── pages/
-│   ├── armar_pc.html
-│   ├── agregar_comp.html
-│   └── componentes.html
+│   ├── main.js                # Lógica de armado y fetch
+│   └── tema.js                # Cambio de tema claro/oscuro
+└── README.md
 ```
 
----
+## ⚙️ Instalación y ejecución  
+1. Clonar el repositorio:  
+   ```bash
+   git clone https://github.com/Alejillo18/Entrega_JS_CoderHouse.git
+   ```  
+2. Abrir `index.html` en tu navegador (no requiere servidor).  
+3. Asegúrate de que `componentes.json` esté en la misma carpeta para la carga remota simulada.  
 
-## 🚀 Tecnologías utilizadas
+## 🛠️ Tecnologías  
+- **HTML5** + **CSS3** + **Bootstrap**  
+- **JavaScript** (ES6+, fetch API, DOM, eventos, módulos)  
+- **SweetAlert2** para notificaciones  
+- **localStorage** / **sessionStorage** para persistencia  
 
-- HTML5 + CSS3
-- JavaScript (DOM, Eventos, Funciones, Objetos, Arrays)
-- `localStorage` y `sessionStorage`
-- Framework CSS: Bootstrap (parcial)
-- SVGs para íconos visuales
+## 📑 Funcionalidades  
+- Carga asíncrona de datos de `componentes.json` via `fetch`.  
+- Generación dinámica de HTML (JS + DOM).  
+- Validación de compatibilidades (CPU ↔ placa madre)(GPU - PSU).  
+- Carrito de PCs con persistencia en sesión.  
+- Cambio de tema claro/oscuro guardado en `localStorage`.  
+- Interactor limpio (sin `console.log` ni `alert()` nativos).
 
----
 
+## ✅ Criterios de evaluación  
+1. **Funcionalidad**: Flujo completo de armado y carrito sin errores.  
+2. **Interactividad**: Captura de entradas con inputs y eventos; actualizaciones asíncronas.  
+3. **Escalabilidad**: Uso de funciones parametrizadas, objetos, arrays y optimización de recorridos.  
+4. **Integridad**: JS en archivos externos, JSON cargado asíncronamente.  
+5. **Legibilidad**: Nombres semánticos, comentarios puntuales y código bien organizado.
 
 ## 👨‍💻 Autor
 
