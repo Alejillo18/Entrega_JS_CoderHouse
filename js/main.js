@@ -119,7 +119,7 @@ import Toastify from 'https://cdn.jsdelivr.net/npm/toastify-js@1.12.0/src/toasti
     configurarBotonesAgregar();
   })
   .catch(error => {
-    alert(error)
+    /* alert(error) */
     generarTablaComponentes();
     generarTablaComprarComponentes();
     configurarBotonesAgregar();
@@ -606,7 +606,7 @@ function configurarBotonesAgregar() {
           break;
       }
       if (!productoOriginal) {
-        alert("Hubo un error al identificar el producto.");
+        /* alert("Hubo un error al identificar el producto."); */
         return;
       }
 
@@ -755,7 +755,7 @@ if (form && tipoField) {
     if (tipoValor === "Placa Madre") {
       const marca = form.marca.value;
       if (!marca) {
-        alert("Debes seleccionar una marca para la Placa Madre (AMD o Intel)");
+        /* alert("Debes seleccionar una marca para la Placa Madre (AMD o Intel)"); */
         return;
       }
       tipoValor = marca;
@@ -1052,7 +1052,7 @@ if (form && tipoField) {
       const indice = getIdPc() + 1;
       const pcJSON = JSON.stringify(pc);
       sessionStorage.setItem(`pc${indice}`, pcJSON);
-      /* Agregamos alerta de confirmacion */
+      /* Agregamos a de confirmacion */
       Swal.fire({
         title: "Computadora enviada a tu carrito",
         showCancelButton: false,
